@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CrawlTreasure/CrawlTreasure.iml" filepath="$PROJECT_DIR$/CrawlTreasure/CrawlTreasure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TreasureFilter/TreasureFilter.iml" filepath="$PROJECT_DIR$/TreasureFilter/TreasureFilter.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,208 @@
+@charset "utf-8";
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline
+}
+
+menu, ol, ul {
+    list-style: none
+}
+
+body, button, input, select, textarea, option, optgroup {
+    font: 14px/1.5 'Microsoft YaHei', tahoma, arial, \5b8b\4f53, sans-serif
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%
+}
+
+fieldset, img {
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+address, cite, dfn, em, var {
+    font-style: normal
+}
+
+input, button, textarea, select {
+    font-size: 100%
+}
+
+code, kbd, pre, samp {
+    font-family: 'courier new', courier, monospace
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+    cursor: help
+}
+
+input {
+    border: 0 none
+}
+
+a {
+    cursor: pointer;
+    _cursor: hand
+}
+
+.clear {
+    clear: both
+}
+
+.clearLeft {
+    clear: left
+}
+
+.clearRight {
+    clear: right
+}
+
+.clearfix {
+    display: block
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+* html.clearfix {
+    height: 1%
+}
+
+article, aside, dialog, footer, header, section, footer, nav, figure, menu {
+    display: block
+}
+
+input, button, select, textarea {
+    outline: 0
+}
+
+.zoom {
+    *zoom: 1
+}
+
+html {
+    zoom: expression(function(ele){ele.style.zoom="1";document.execCommand("BackgroundImageCache",false,true)}(this))
+}
+
+.error, .alert, .notice, .success, .info {
+    padding: .8em;
+    margin-bottom: 1em;
+    border: 2px solid #ddd
+}
+
+.error, .alert {
+    background: #fbe3e4;
+    color: #8a1f11;
+    border-color: #fbc2c4
+}
+
+.notice {
+    background: #fff6bf;
+    color: #514721;
+    border-color: #ffd324
+}
+
+.success {
+    background: #e6efc2;
+    color: #264409;
+    border-color: #c6d880
+}
+
+.info {
+    background: #d5edf8;
+    color: #205791;
+    border-color: #92cae4
+}
+
+.error a, .alert a {
+    color: #8a1f11
+}
+
+.notice a {
+    color: #514721
+}
+
+.success a {
+    color: #264409
+}
+
+.info a {
+    color: #205791
+}
+
+.floatLeft {
+    float: left
+}
+
+.floatRight {
+    float: right
+}
+
+.hidden {
+    display: none !important
+}
+
+.textLeft {
+    text-align: left
+}
+
+.textRight {
+    text-align: right
+}
+
+.textCenter {
+    text-align: center
+}
+
+.verticalMiddle {
+    vertical-align: middle
+}
+
+.fn {
+    font-weight: normal
+}
+
+.fb {
+    font-weight: bold
+}
+
+.fixFloat:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.fixFloat {
+    zoom: 1
+}
+
+.checkbox {
+    vertical-align: middle
+}
+
+.disabled {
+    text-decoration: line-through !important;
+    cursor: not-allowed !important
+}

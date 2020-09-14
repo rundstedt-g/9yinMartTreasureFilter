@@ -12,4 +12,4 @@ class CrawltreasureItem(scrapy.Item):
     name = scrapy.Field()
     id = scrapy.Field()
     price = scrapy.Field()
-    itemDesc =scrapy.Field()
+    itemDesc = scrapy.Field()

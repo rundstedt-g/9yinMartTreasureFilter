@@ -1,0 +1,1547 @@
+[
+  [
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2012-09-06 09:27:31",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "电信一区",
+          "gameId": 10,
+          "gareaId": 1345012624440,
+          "id": 186100010,
+          "parentId": 0,
+          "serverIp": 1740690818,
+          "serverName": "龙门客栈",
+          "status": "1"
+        },
+        {
+          "areaName": "电信一区",
+          "gameId": 10,
+          "gareaId": 1345012624440,
+          "id": 186100011,
+          "parentId": 186100010,
+          "serverIp": 2362430044,
+          "serverName": "桃花岛",
+          "status": "1"
+        },
+        {
+          "areaName": "电信一区",
+          "gameId": 10,
+          "gareaId": 1345012624440,
+          "id": 186100105,
+          "parentId": 186100010,
+          "serverIp": 2362430045,
+          "serverName": "白马岩",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1345012624440,
+      "gareaName": "电信一区",
+      "issuerId": 7,
+      "netType": "0",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2012-09-13 09:42:09",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "电信四区",
+          "gameId": 10,
+          "gareaId": 1345013150263,
+          "id": 186100032,
+          "parentId": 186100010,
+          "serverIp": 2362430046,
+          "serverName": "雁门关",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1345013150263,
+      "gareaName": "电信四区",
+      "issuerId": 7,
+      "netType": "0",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2012-09-13 09:42:18",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "网通一区",
+          "gameId": 10,
+          "gareaId": 1345013176812,
+          "id": 186100044,
+          "parentId": 7100037,
+          "serverIp": 1941327082,
+          "serverName": "离别居",
+          "status": "1"
+        },
+        {
+          "areaName": "网通一区",
+          "gameId": 10,
+          "gareaId": 1345013176812,
+          "id": 186100045,
+          "parentId": 7100037,
+          "serverIp": 1941327080,
+          "serverName": "无暇山",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1345013176812,
+      "gareaName": "网通一区",
+      "issuerId": 7,
+      "netType": "0",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2012-09-13 09:52:10",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "华语中国一区",
+          "gameId": 10,
+          "gareaId": 1346829595415,
+          "id": 186100106,
+          "parentId": 7100037,
+          "serverIp": 3526566302,
+          "serverName": "冰火岛",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1346829595415,
+      "gareaName": "华语中国一区",
+      "issuerId": 7,
+      "netType": "0",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2012-09-13 09:52:17",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "华语中国二区",
+          "gameId": 10,
+          "gareaId": 1347431374331,
+          "id": 186100058,
+          "parentId": 7100037,
+          "serverIp": 1941327075,
+          "serverName": "云霄殿",
+          "status": "1"
+        },
+        {
+          "areaName": "华语中国二区",
+          "gameId": 10,
+          "gareaId": 1347431374331,
+          "id": 186100062,
+          "parentId": 7100037,
+          "serverIp": 1941327069,
+          "serverName": "星宿海",
+          "status": "1"
+        },
+        {
+          "areaName": "华语中国二区",
+          "gameId": 10,
+          "gareaId": 1347431374331,
+          "id": 186100085,
+          "parentId": 7100037,
+          "serverIp": 2362430067,
+          "serverName": "卧虎藏龙",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1347431374331,
+      "gareaName": "华语中国二区",
+      "issuerId": 7,
+      "netType": "0",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2012-11-01 14:10:11",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "华语中国三区",
+          "gameId": 10,
+          "gareaId": 1347431398338,
+          "id": 186100068,
+          "parentId": 7100037,
+          "serverIp": 3526566328,
+          "serverName": "凤求凰",
+          "status": "1"
+        },
+        {
+          "areaName": "华语中国三区",
+          "gameId": 10,
+          "gareaId": 1347431398338,
+          "id": 186100086,
+          "parentId": 7100037,
+          "serverIp": 1941327055,
+          "serverName": "龙盘虎踞",
+          "status": "1"
+        },
+        {
+          "areaName": "华语中国三区",
+          "gameId": 10,
+          "gareaId": 1347431398338,
+          "id": 186100091,
+          "parentId": 7100037,
+          "serverIp": 1941326982,
+          "serverName": "一代宗师",
+          "status": "1"
+        },
+        {
+          "areaName": "华语中国三区",
+          "gameId": 10,
+          "gareaId": 1347431398338,
+          "id": 186100093,
+          "parentId": 7100037,
+          "serverIp": 2362430066,
+          "serverName": "葵花宝典",
+          "status": "1"
+        },
+        {
+          "areaName": "华语中国三区",
+          "gameId": 10,
+          "gareaId": 1347431398338,
+          "id": 186100094,
+          "parentId": 7100037,
+          "serverIp": 1031875765,
+          "serverName": "金蛇狂舞",
+          "status": "1"
+        },
+        {
+          "areaName": "华语中国三区",
+          "gameId": 10,
+          "gareaId": 1347431398338,
+          "id": 186100095,
+          "parentId": 7100037,
+          "serverIp": 2362430062,
+          "serverName": "山舞银蛇",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1347431398338,
+      "gareaName": "华语中国三区",
+      "issuerId": 7,
+      "netType": "0",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "1",
+      "chargeType": "2",
+      "close": "",
+      "create": "2013-03-11 09:08:33",
+      "emigrateLimit": "0",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "武侠区",
+          "gameId": 10,
+          "gareaId": 1,
+          "id": 7100035,
+          "parentId": 7100037,
+          "serverIp": 3029961577,
+          "serverName": "华山论剑",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠区",
+          "gameId": 10,
+          "gareaId": 1,
+          "id": 7100037,
+          "parentId": 0,
+          "serverIp": 1941327004,
+          "serverName": "侠骨丹心",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1,
+      "gareaName": "武侠区",
+      "issuerId": 7,
+      "netType": "0",
+      "state": "1",
+      "subdbId": 1
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2013-03-11 09:28:03",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "武侠一区",
+          "gameId": 10,
+          "gareaId": 1362965283936,
+          "id": 186100096,
+          "parentId": 186100101,
+          "serverIp": 1941327054,
+          "serverName": "书剑恩仇",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠一区",
+          "gameId": 10,
+          "gareaId": 1362965283936,
+          "id": 186100099,
+          "parentId": 186100101,
+          "serverIp": 2362430060,
+          "serverName": "侠骨柔情",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠一区",
+          "gameId": 10,
+          "gareaId": 1362965283936,
+          "id": 186100101,
+          "parentId": 0,
+          "serverIp": 1941327014,
+          "serverName": "群雄逐鹿",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠一区",
+          "gameId": 10,
+          "gareaId": 1362965283936,
+          "id": 186100103,
+          "parentId": 186100101,
+          "serverIp": 2362430072,
+          "serverName": "对酒当歌",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠一区",
+          "gameId": 10,
+          "gareaId": 1362965283936,
+          "id": 186100104,
+          "parentId": 186100101,
+          "serverIp": 1941327061,
+          "serverName": "热血江湖",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠一区",
+          "gameId": 10,
+          "gareaId": 1362965283936,
+          "id": 186100108,
+          "parentId": 186100101,
+          "serverIp": 1941327013,
+          "serverName": "气吞山河",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠一区",
+          "gameId": 10,
+          "gareaId": 1362965283936,
+          "id": 186100109,
+          "parentId": 186100101,
+          "serverIp": 1941327004,
+          "serverName": "金戈铁马",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠一区",
+          "gameId": 10,
+          "gareaId": 1362965283936,
+          "id": 186100110,
+          "parentId": 186100101,
+          "serverIp": 1941326996,
+          "serverName": "龙争虎斗",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠一区",
+          "gameId": 10,
+          "gareaId": 1362965283936,
+          "id": 186100111,
+          "parentId": 186100101,
+          "serverIp": 1941326987,
+          "serverName": "龙吟虎啸",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠一区",
+          "gameId": 10,
+          "gareaId": 1362965283936,
+          "id": 186100125,
+          "parentId": 186100101,
+          "serverIp": 2362430068,
+          "serverName": "笑傲江湖",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1362965283936,
+      "gareaName": "武侠一区",
+      "issuerId": 7,
+      "netType": "0",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2013-08-08 10:11:30",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100112,
+          "parentId": 186100101,
+          "serverIp": 1941327004,
+          "serverName": "浣花洗剑",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100114,
+          "parentId": 186100101,
+          "serverIp": 1941327060,
+          "serverName": "问鼎江湖",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100115,
+          "parentId": 186100101,
+          "serverIp": 2362430070,
+          "serverName": "剑指苍穹",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100116,
+          "parentId": 186100101,
+          "serverIp": 2362430019,
+          "serverName": "石破天惊",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100117,
+          "parentId": 186100101,
+          "serverIp": 2362430069,
+          "serverName": "凤舞九天",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100118,
+          "parentId": 186100101,
+          "serverIp": 2362430056,
+          "serverName": "义海豪情",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100119,
+          "parentId": 186100101,
+          "serverIp": 2362430060,
+          "serverName": "避暑山庄",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100120,
+          "parentId": 186100101,
+          "serverIp": 2362430066,
+          "serverName": "江山如画",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100122,
+          "parentId": 186100101,
+          "serverIp": 2362430072,
+          "serverName": "千峰竞秀",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100123,
+          "parentId": 186100101,
+          "serverIp": 1941326990,
+          "serverName": "花好月圆",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠二区",
+          "gameId": 10,
+          "gareaId": 1375781185775,
+          "id": 186100124,
+          "parentId": 186100101,
+          "serverIp": 1941327052,
+          "serverName": "龙啸九州",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1375781185775,
+      "gareaName": "武侠二区",
+      "issuerId": 7,
+      "netType": "0",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2013-12-12 09:28:14",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "武侠三区",
+          "gameId": 10,
+          "gareaId": 1386811694977,
+          "id": 186100113,
+          "parentId": 186100101,
+          "serverIp": 1941327067,
+          "serverName": "绝代双骄",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠三区",
+          "gameId": 10,
+          "gareaId": 1386811694977,
+          "id": 186100128,
+          "parentId": 186100101,
+          "serverIp": 1941327061,
+          "serverName": "比翼双飞",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠三区",
+          "gameId": 10,
+          "gareaId": 1386811694977,
+          "id": 186100129,
+          "parentId": 186100101,
+          "serverIp": 1941327059,
+          "serverName": "万马奔腾",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠三区",
+          "gameId": 10,
+          "gareaId": 1386811694977,
+          "id": 186100130,
+          "parentId": 186100101,
+          "serverIp": 1941327054,
+          "serverName": "千军万马",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠三区",
+          "gameId": 10,
+          "gareaId": 1386811694977,
+          "id": 186100132,
+          "parentId": 186100101,
+          "serverIp": 1941326987,
+          "serverName": "龙马精神",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠三区",
+          "gameId": 10,
+          "gareaId": 1386811694977,
+          "id": 186100133,
+          "parentId": 186100101,
+          "serverIp": 1941326876,
+          "serverName": "一马当先",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠三区",
+          "gameId": 10,
+          "gareaId": 1386811694977,
+          "id": 186100134,
+          "parentId": 186100101,
+          "serverIp": 2362430069,
+          "serverName": "青梅竹马",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠三区",
+          "gameId": 10,
+          "gareaId": 1386811694977,
+          "id": 186100135,
+          "parentId": 186100101,
+          "serverIp": 2362430019,
+          "serverName": "名扬天下",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠三区",
+          "gameId": 10,
+          "gareaId": 1386811694977,
+          "id": 186100136,
+          "parentId": 186100101,
+          "serverIp": 2362430068,
+          "serverName": "叱咤江湖",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1386811694977,
+      "gareaName": "武侠三区",
+      "issuerId": 7,
+      "netType": "0",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2014-06-06 14:47:43",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "武侠四区",
+          "gameId": 10,
+          "gareaId": 1401846607544,
+          "id": 7100044,
+          "parentId": 186100101,
+          "serverIp": 1941327059,
+          "serverName": "策马江湖",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠四区",
+          "gameId": 10,
+          "gareaId": 1401846607544,
+          "id": 7100045,
+          "parentId": 186100101,
+          "serverIp": 1941327012,
+          "serverName": "快意恩仇",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠四区",
+          "gameId": 10,
+          "gareaId": 1401846607544,
+          "id": 7100046,
+          "parentId": 186100101,
+          "serverIp": 2362430020,
+          "serverName": "纵横四海",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠四区",
+          "gameId": 10,
+          "gareaId": 1401846607544,
+          "id": 7100047,
+          "parentId": 186100101,
+          "serverIp": 3526566327,
+          "serverName": "指点江山",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠四区",
+          "gameId": 10,
+          "gareaId": 1401846607544,
+          "id": 7100048,
+          "parentId": 186100101,
+          "serverIp": 2362430049,
+          "serverName": "君临天下",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠四区",
+          "gameId": 10,
+          "gareaId": 1401846607544,
+          "id": 7100049,
+          "parentId": 186100101,
+          "serverIp": 1941327075,
+          "serverName": "问鼎天下",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠四区",
+          "gameId": 10,
+          "gareaId": 1401846607544,
+          "id": 7100050,
+          "parentId": 186100101,
+          "serverIp": 1941327014,
+          "serverName": "烽烟四起",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠四区",
+          "gameId": 10,
+          "gareaId": 1401846607544,
+          "id": 186100137,
+          "parentId": 186100101,
+          "serverIp": 2362430048,
+          "serverName": "侠肝义胆",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠四区",
+          "gameId": 10,
+          "gareaId": 1401846607544,
+          "id": 186100143,
+          "parentId": 186100101,
+          "serverIp": 1941326996,
+          "serverName": "义薄云天",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠四区",
+          "gameId": 10,
+          "gareaId": 1401846607544,
+          "id": 186100144,
+          "parentId": 186100101,
+          "serverIp": 2362430072,
+          "serverName": "天下无双",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1401846607544,
+      "gareaName": "武侠四区",
+      "issuerId": 7,
+      "netType": "1",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2014-09-05 13:14:15",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "武侠五区",
+          "gameId": 10,
+          "gareaId": 1409894055109,
+          "id": 7100051,
+          "parentId": 186100101,
+          "serverIp": 1941327016,
+          "serverName": "锦绣河山",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠五区",
+          "gameId": 10,
+          "gareaId": 1409894055109,
+          "id": 7100052,
+          "parentId": 186100101,
+          "serverIp": 3526566294,
+          "serverName": "风云再起",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠五区",
+          "gameId": 10,
+          "gareaId": 1409894055109,
+          "id": 7100053,
+          "parentId": 186100101,
+          "serverIp": 2362430069,
+          "serverName": "怒海狂涛",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠五区",
+          "gameId": 10,
+          "gareaId": 1409894055109,
+          "id": 7100054,
+          "parentId": 186100101,
+          "serverIp": 1031875734,
+          "serverName": "铁血丹心",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠五区",
+          "gameId": 10,
+          "gareaId": 1409894055109,
+          "id": 7100055,
+          "parentId": 186100101,
+          "serverIp": 1941327054,
+          "serverName": "扬名四海",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠五区",
+          "gameId": 10,
+          "gareaId": 1409894055109,
+          "id": 7100056,
+          "parentId": 186100101,
+          "serverIp": 1031875787,
+          "serverName": "盖世无双",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠五区",
+          "gameId": 10,
+          "gareaId": 1409894055109,
+          "id": 7100057,
+          "parentId": 186100101,
+          "serverIp": 1031875771,
+          "serverName": "星落九天",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠五区",
+          "gameId": 10,
+          "gareaId": 1409894055109,
+          "id": 7100061,
+          "parentId": 186100101,
+          "serverIp": 1941327014,
+          "serverName": "念萝坝",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1409894055109,
+      "gareaName": "武侠五区",
+      "issuerId": 7,
+      "netType": "3",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2015-03-13 13:03:16",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "武侠六区",
+          "gameId": 10,
+          "gareaId": 1426222996224,
+          "id": 7100058,
+          "parentId": 186100101,
+          "serverIp": 3729329538,
+          "serverName": "剑啸苍穹",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠六区",
+          "gameId": 10,
+          "gareaId": 1426222996224,
+          "id": 7100059,
+          "parentId": 186100101,
+          "serverIp": 1941327059,
+          "serverName": "弈剑沧澜",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠六区",
+          "gameId": 10,
+          "gareaId": 1426222996224,
+          "id": 7100062,
+          "parentId": 186100101,
+          "serverIp": 3729326698,
+          "serverName": "横扫千军",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠六区",
+          "gameId": 10,
+          "gareaId": 1426222996224,
+          "id": 7100063,
+          "parentId": 186100101,
+          "serverIp": 3729329532,
+          "serverName": "琴心剑魄",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠六区",
+          "gameId": 10,
+          "gareaId": 1426222996224,
+          "id": 7100064,
+          "parentId": 186100101,
+          "serverIp": 1941327075,
+          "serverName": "月舞倾城",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠六区",
+          "gameId": 10,
+          "gareaId": 1426222996224,
+          "id": 7100065,
+          "parentId": 186100101,
+          "serverIp": 1031875662,
+          "serverName": "剑啸乾坤",
+          "status": "1"
+        },
+        {
+          "areaName": "武侠六区",
+          "gameId": 10,
+          "gareaId": 1426222996224,
+          "id": 7100066,
+          "parentId": 186100101,
+          "serverIp": 1941327067,
+          "serverName": "刀光剑影",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1426222996224,
+      "gareaName": "武侠六区",
+      "issuerId": 7,
+      "netType": "3",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2015-08-06 10:14:46",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "江湖一区",
+          "gameId": 10,
+          "gareaId": 1438827286638,
+          "id": 7100067,
+          "parentId": 7100069,
+          "serverIp": 1941327016,
+          "serverName": "蓬莱岛",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖一区",
+          "gameId": 10,
+          "gareaId": 1438827286638,
+          "id": 7100068,
+          "parentId": 7100069,
+          "serverIp": 3729329531,
+          "serverName": "无极岛",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖一区",
+          "gameId": 10,
+          "gareaId": 1438827286638,
+          "id": 7100069,
+          "parentId": 0,
+          "serverIp": 1941326866,
+          "serverName": "侠客岛",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖一区",
+          "gameId": 10,
+          "gareaId": 1438827286638,
+          "id": 7100070,
+          "parentId": 7100069,
+          "serverIp": 1031875787,
+          "serverName": "烟雨楼",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖一区",
+          "gameId": 10,
+          "gareaId": 1438827286638,
+          "id": 7100071,
+          "parentId": 7100069,
+          "serverIp": 1031875781,
+          "serverName": "无量山",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖一区",
+          "gameId": 10,
+          "gareaId": 1438827286638,
+          "id": 7100073,
+          "parentId": 7100069,
+          "serverIp": 1941327054,
+          "serverName": "明月峰",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖一区",
+          "gameId": 10,
+          "gareaId": 1438827286638,
+          "id": 7100074,
+          "parentId": 7100069,
+          "serverIp": 3729329415,
+          "serverName": "达摩院",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖一区",
+          "gameId": 10,
+          "gareaId": 1438827286638,
+          "id": 7100075,
+          "parentId": 7100069,
+          "serverIp": 1941327082,
+          "serverName": "梵音寺",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖一区",
+          "gameId": 10,
+          "gareaId": 1438827286638,
+          "id": 7100076,
+          "parentId": 7100069,
+          "serverIp": 1941327075,
+          "serverName": "藏剑峰",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1438827286638,
+      "gareaName": "江湖一区",
+      "issuerId": 7,
+      "netType": "3",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2016-02-28 09:22:00",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "江湖二区",
+          "gameId": 10,
+          "gareaId": 1456622520892,
+          "id": 7100077,
+          "parentId": 7100069,
+          "serverIp": 1031875736,
+          "serverName": "侠隐峰",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖二区",
+          "gameId": 10,
+          "gareaId": 1456622520892,
+          "id": 7100078,
+          "parentId": 7100069,
+          "serverIp": 3729326699,
+          "serverName": "无忧谷",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖二区",
+          "gameId": 10,
+          "gareaId": 1456622520892,
+          "id": 7100079,
+          "parentId": 7100069,
+          "serverIp": 1941326874,
+          "serverName": "恶人谷",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖二区",
+          "gameId": 10,
+          "gareaId": 1456622520892,
+          "id": 7100080,
+          "parentId": 7100069,
+          "serverIp": 1031875768,
+          "serverName": "风云阁",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖二区",
+          "gameId": 10,
+          "gareaId": 1456622520892,
+          "id": 7100081,
+          "parentId": 7100069,
+          "serverIp": 1941327059,
+          "serverName": "通天谷",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖二区",
+          "gameId": 10,
+          "gareaId": 1456622520892,
+          "id": 7100082,
+          "parentId": 7100069,
+          "serverIp": 1941328499,
+          "serverName": "荡剑山",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1456622520892,
+      "gareaName": "江湖二区",
+      "issuerId": 7,
+      "netType": "3",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2016-08-08 10:16:04",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "江湖三区",
+          "gameId": 10,
+          "gareaId": 1470622564949,
+          "id": 7100083,
+          "parentId": 7100544,
+          "serverIp": 1031875737,
+          "serverName": "世家风云",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖三区",
+          "gameId": 10,
+          "gareaId": 1470622564949,
+          "id": 7100084,
+          "parentId": 7100544,
+          "serverIp": 1941326870,
+          "serverName": "雄霸天下",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖三区",
+          "gameId": 10,
+          "gareaId": 1470622564949,
+          "id": 7100085,
+          "parentId": 7100544,
+          "serverIp": 1031875771,
+          "serverName": "世外桃源",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖三区",
+          "gameId": 10,
+          "gareaId": 1470622564949,
+          "id": 7100086,
+          "parentId": 7100544,
+          "serverIp": 1941327012,
+          "serverName": "剑啸九霄",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖三区",
+          "gameId": 10,
+          "gareaId": 1470622564949,
+          "id": 7100538,
+          "parentId": 7100544,
+          "serverIp": 1031875787,
+          "serverName": "恩山义海",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖三区",
+          "gameId": 10,
+          "gareaId": 1470622564949,
+          "id": 7100539,
+          "parentId": 7100544,
+          "serverIp": 1941326861,
+          "serverName": "琴胆剑心",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖三区",
+          "gameId": 10,
+          "gareaId": 1470622564949,
+          "id": 7100540,
+          "parentId": 7100544,
+          "serverIp": 1031875734,
+          "serverName": "闻鸡起武",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖三区",
+          "gameId": 10,
+          "gareaId": 1470622564949,
+          "id": 7100541,
+          "parentId": 7100544,
+          "serverIp": 1031875662,
+          "serverName": "鹏程万里",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1470622564949,
+      "gareaName": "江湖三区",
+      "issuerId": 7,
+      "netType": "3",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2017-04-13 14:46:07",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "江湖四区",
+          "gameId": 10,
+          "gareaId": 1492065967524,
+          "id": 7100542,
+          "parentId": 7100544,
+          "serverIp": 3729326699,
+          "serverName": "逐鹿中原",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖四区",
+          "gameId": 10,
+          "gareaId": 1492065967524,
+          "id": 7100543,
+          "parentId": 7100544,
+          "serverIp": 1941327016,
+          "serverName": "墨染江山",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖四区",
+          "gameId": 10,
+          "gareaId": 1492065967524,
+          "id": 7100544,
+          "parentId": 0,
+          "serverIp": 1740690820,
+          "serverName": "缘定三生",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖四区",
+          "gameId": 10,
+          "gareaId": 1492065967524,
+          "id": 7100545,
+          "parentId": 7100544,
+          "serverIp": 1941326868,
+          "serverName": "威震四海",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖四区",
+          "gameId": 10,
+          "gareaId": 1492065967524,
+          "id": 7100547,
+          "parentId": 7100544,
+          "serverIp": 1941326874,
+          "serverName": "星火燎原",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖四区",
+          "gameId": 10,
+          "gareaId": 1492065967524,
+          "id": 7100548,
+          "parentId": 7100544,
+          "serverIp": 3729326698,
+          "serverName": "圣火焚天",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖四区",
+          "gameId": 10,
+          "gareaId": 1492065967524,
+          "id": 7100549,
+          "parentId": 7100544,
+          "serverIp": 1031875787,
+          "serverName": "烟雨狂歌",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖四区",
+          "gameId": 10,
+          "gareaId": 1492065967524,
+          "id": 7100550,
+          "parentId": 7100544,
+          "serverIp": 3729326699,
+          "serverName": "大浪淘沙",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖四区",
+          "gameId": 10,
+          "gareaId": 1492065967524,
+          "id": 7100551,
+          "parentId": 7100544,
+          "serverIp": 1031875662,
+          "serverName": "碧血枪魂",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1492065967524,
+      "gareaName": "江湖四区",
+      "issuerId": 7,
+      "netType": "3",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2018-03-05 09:26:52",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "江湖五区",
+          "gameId": 10,
+          "gareaId": 1520213212600,
+          "id": 7100552,
+          "parentId": 7100544,
+          "serverIp": 1740690827,
+          "serverName": "问鼎九州",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖五区",
+          "gameId": 10,
+          "gareaId": 1520213212600,
+          "id": 7100553,
+          "parentId": 7100544,
+          "serverIp": 1941326868,
+          "serverName": "天下为家",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖五区",
+          "gameId": 10,
+          "gareaId": 1520213212600,
+          "id": 7100554,
+          "parentId": 7100544,
+          "serverIp": 1031875787,
+          "serverName": "风起云涌",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖五区",
+          "gameId": 10,
+          "gareaId": 1520213212600,
+          "id": 7100555,
+          "parentId": 7100556,
+          "serverIp": 1941326863,
+          "serverName": "千山暮雪",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖五区",
+          "gameId": 10,
+          "gareaId": 1520213212600,
+          "id": 7100556,
+          "parentId": 0,
+          "serverIp": 1740690829,
+          "serverName": "仗剑天涯",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖五区",
+          "gameId": 10,
+          "gareaId": 1520213212600,
+          "id": 7100558,
+          "parentId": 7100563,
+          "serverIp": 1740690839,
+          "serverName": "星耀九州",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖五区",
+          "gameId": 10,
+          "gareaId": 1520213212600,
+          "id": 7100559,
+          "parentId": 7100563,
+          "serverIp": 1941327016,
+          "serverName": "唯我独尊",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖五区",
+          "gameId": 10,
+          "gareaId": 1520213212600,
+          "id": 7100560,
+          "parentId": 7100563,
+          "serverIp": 1740690843,
+          "serverName": "谁与争锋",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1520213212600,
+      "gareaName": "江湖五区",
+      "issuerId": 7,
+      "netType": "3",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2019-06-12 14:41:08",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "江湖六区",
+          "gameId": 10,
+          "gareaId": 1560239786115,
+          "id": 7100561,
+          "parentId": 7100563,
+          "serverIp": 1941326868,
+          "serverName": "战无不胜",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖六区",
+          "gameId": 10,
+          "gareaId": 1560239786115,
+          "id": 7100562,
+          "parentId": 7100563,
+          "serverIp": 1941326874,
+          "serverName": "仁者无敌",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖六区",
+          "gameId": 10,
+          "gareaId": 1560239786115,
+          "id": 7100563,
+          "parentId": 0,
+          "serverIp": 1740690852,
+          "serverName": "举世无双",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖六区",
+          "gameId": 10,
+          "gareaId": 1560239786115,
+          "id": 7100564,
+          "parentId": 0,
+          "serverIp": 1740690860,
+          "serverName": "龙吟九霄",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖六区",
+          "gameId": 10,
+          "gareaId": 1560239786115,
+          "id": 7100565,
+          "parentId": 0,
+          "serverIp": 1941326863,
+          "serverName": "气贯长虹",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖六区",
+          "gameId": 10,
+          "gareaId": 1560239786115,
+          "id": 7100566,
+          "parentId": 0,
+          "serverIp": 1740690847,
+          "serverName": "飞鸿踏雪",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖六区",
+          "gameId": 10,
+          "gareaId": 1560239786115,
+          "id": 7100567,
+          "parentId": 0,
+          "serverIp": 1941326870,
+          "serverName": "斗转星移",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1560239786115,
+      "gareaName": "江湖六区",
+      "issuerId": 7,
+      "netType": "3",
+      "state": "1",
+      "subdbId": 0
+    },
+    {
+      "activeMode": "",
+      "chargeType": "",
+      "close": "",
+      "create": "2020-08-07 09:18:14",
+      "emigrateLimit": "",
+      "gameId": 10,
+      "gameServers": [
+        {
+          "areaName": "江湖七区",
+          "gameId": 10,
+          "gareaId": 1596763094271,
+          "id": 7100568,
+          "parentId": 0,
+          "serverIp": 1941326874,
+          "serverName": "醉江湖",
+          "status": "1"
+        },
+        {
+          "areaName": "江湖七区",
+          "gameId": 10,
+          "gareaId": 1596763094271,
+          "id": 7100569,
+          "parentId": 0,
+          "serverIp": 1740690843,
+          "serverName": "叹沧海",
+          "status": "1"
+        }
+      ],
+      "gareaId": 1596763094271,
+      "gareaName": "江湖七区",
+      "issuerId": 7,
+      "netType": "3",
+      "state": "1",
+      "subdbId": 0
+    }
+  ],
+  {
+    "flag": true
+  }
+]

@@ -14,7 +14,7 @@ from itemadapter import ItemAdapter
 
 class CrawltreasurePipeline:
     def __init__(self):
-            self.file = open('treasure.json', mode='w', encoding='utf-8')
+        self.file = open('treasure.json', mode='w', encoding='utf-8')
     def process_item(self, item, spider):
         jsondata = json.dumps(dict(item), ensure_ascii=False) + "\n"
         self.file.write(jsondata)
