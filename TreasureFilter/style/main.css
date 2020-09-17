@@ -584,7 +584,7 @@ body.login_page .login_floor {
     z-index: 11;
 }
 .warp .top-menu h1.logo {
-    width: 163px;
+    width: 283px;
     height: 70px;
     float: left;
     background-image: url("../images/logo.png");
@@ -594,7 +594,7 @@ body.login_page .login_floor {
 }
 .warp .top-menu h1.logo a {
     display: block;
-    width: 163px;
+    width: 283px;
     height: 70px;
 }
 .warp .top-menu ul {
@@ -632,12 +632,12 @@ body.login_page .login_floor {
 }
 .warp .top-menu .user-name {
     float: right;
-    background-image: url("../images/icon_menu.png");
+    background-image: none;
     background-repeat: no-repeat;
     background-position: center;
     background-position: right 50%;
     padding-right: 15px;
-    text-align: right;
+    text-align: left;
     font-size: 16px;
     margin-top: 15px;
     margin-right: 15px;
@@ -647,7 +647,7 @@ body.login_page .login_floor {
     font-weight: bold;
 }
 .warp .top-menu .user-name span {
-    font-size: 12px;
+    font-size: 14px;
     color: #757575;
     font-weight: normal;
 }
@@ -658,11 +658,15 @@ body.login_page .login_floor {
     margin-left: 10px;
 }
 .warp .top-menu .logout {
+    background-image: url("../images/refresh.png");
+    background-repeat: no-repeat;
+    background-position: top;
     float: right;
     font-weight: bold;
     height: 70px;
     line-height: 70px;
     color: #000;
+    margin-top: 15px;
     margin-left: 15px;
 }
 .warp_box {
@@ -766,7 +770,7 @@ body.login_page .login_floor {
     background-position: center;
     text-indent: -999em;
     border: 1px solid #999;
-    margin-left: -1px;
+    margin-left: 1px;
 }
 .content_warp.goods_menu .link_list .search_box a.buyer{
     color: #E72E00;
@@ -1224,40 +1228,45 @@ body.login_page .login_floor {
     background-repeat: no-repeat;
     background-position: center -138px;
     height: 207px;
-    padding-top: 82px;
+    padding-top: 100px;
+    position: relative;
 }
 .footer p {
     color: #B2B2B2;
 }
 .footer .footer_menu {
     margin: 0 auto;
+    padding-top: 50px;
     width: 732px;
-    overflow: hidden;
 }
 .footer .footer_menu a {
     display: block;
     float: left;
     width: 160px;
-    height: 168px;
+    height: 30px;
     margin: 0 42px;
-    text-indent: -999em;
+    color: black;
+    text-align:center;
 }
-.footer .footer_menu a.footer-server {
-    background-image: url("../images/floor_icon_01.png");
-}
-.footer .footer_menu a.footer-help {
-    background-image: url("../images/floor_icon_02.png");
-}
-.footer .footer_menu a.footer-notice {
-    background-image: url("../images/floor_icon_03.png");
+.footer .footer_menu a:hover {
+    color: #fe315c;
 }
 .copy_right {
-    padding-top: 49px;
-    padding-bottom: 49px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
     background-color: #fff;
 }
 .copy_right p {
     color: #B2B2B2;
+}
+#developerLink{
+    color: #b2b2b2;
+}
+#developerLink:hover{
+    color: #867d7d;
 }
 .copy_right ul {
     width: 535px;
