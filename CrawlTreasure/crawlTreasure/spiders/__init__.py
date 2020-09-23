@@ -4,6 +4,8 @@
 # 您的爬虫
 
 import json
+
+import pymysql
 import scrapy
 import time
 from lxml import etree
@@ -36,32 +38,64 @@ class CrawltreasureSpider(scrapy.Spider):
         for i in range(1,totalPages+1):
             new_time_stamp = str(int(time.time()*1000))
             newUrl = 'http://jishi.woniu.com/9yin/anonymous/find'+response.meta['status']+'Goods.do?serverId='+self.serverId+'&gameId=10&typeNameParam=146' + '&pageIndex=' +str(i) +'&_=' + new_time_stamp
-            print(newUrl)
-            yield scrapy.Request(newUrl, callback=self.parse_content, meta=response.meta)
+            yield scrapy.Request(newUrl, callback=self.parse_content)
 
     def parse_content(self, response):
         sites = json.loads(response.body_as_unicode())
         for i in sites[0]['pageData']:
             tree = etree.HTML(i['itemDesc'])
             treasureProp = tree.xpath('//font[@color="#FFD700"]')
-            a = []
-            a.clear()
+            treasureSkill = tree.xpath('//font[@color1="#FF0000"]')
+            if len(treasureSkill)==0:
+                skillText = ""
+            else:
+                skillText = treasureSkill[0].text
+            itemProp = []
+            itemProp.clear()
             for k in treasureProp:
-                a.append(k.text)
+                itemProp.append(k.text)
+            propChar = ','.join(itemProp)
+            itemMeta = {
+                'id' : i['id'],
+                'itemName' : i['itemName'],
+                'price' : i['price'],
+                'itemAmount' : i['itemAmount'],
+                'statu' : i['status'],
+                'publicityEndDate' : i['publicityEndDate'],
+                'shelfDate' : i['shelfDate'],
+                'shelfDays' : i['shelfDays'],
+                'property' : propChar,
+                'skill' : skillText,
+                'iconPath' : i['iconPath'],
+                'itemDesc' : i['itemDesc'],
+                'serverId' : i['serverId']
+            }
+            fUrl = 'http://jishi.woniu.com/9yin/anonymous/getItemsFollowCount.do?serverId='
+            serverId = i['serverId']
+            itemIds = i['id']
+            time_stamp = str(int(time.time()*1000))
+            followUrl = fUrl+serverId+'&gameId=10&itemIds='+str(itemIds)+'&_='+time_stamp
+            yield scrapy.Request(followUrl, callback=self.parse_follow, meta=itemMeta)
 
-            num = 0
-            for j in a:
-                if j.find('气血恢复速率')>=0 or j.find('暴击伤害减免')>=0 or j.find('被暴击几率降低')>=0 :
-                    num += 1
-
-            if num == 3 :
-                item = CrawltreasureItem()
-                item['status'] = response.meta['status']
-                item['name'] = i['itemName']
-                item['id'] = i['id']
-                item['price'] = i['price']
-                item['itemDesc'] = a
-                yield item
-
+    def parse_follow(self, response):
+        sites = json.loads(response.body_as_unicode())
+        id = response.meta['id']
+        followCount = sites[0]['data'][str(id)]
+        item = CrawltreasureItem()
+        item['id'] = response.meta['id']
+        item['itemName'] = response.meta['itemName']
+        item['price'] = response.meta['price']
+        item['itemAmount'] = response.meta['itemAmount']
+        item['statu'] = response.meta['statu']
+        item['publicityEndDate'] = response.meta['publicityEndDate']
+        item['shelfDate'] = response.meta['shelfDate']
+        item['shelfDays'] = response.meta['shelfDays']
+        item['property'] = response.meta['property']
+        item['skill'] = response.meta['skill']
+        item['followCount'] = followCount
+        item['iconPath'] = response.meta['iconPath']
+        item['itemDesc'] = response.meta['itemDesc']
+        item['serverId'] = response.meta['serverId']
+        yield item
 
 

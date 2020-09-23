@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CrawlTreasure/CrawlTreasure.iml" filepath="$PROJECT_DIR$/CrawlTreasure/CrawlTreasure.iml" />
       <module fileurl="file://$PROJECT_DIR$/TreasureFilter/TreasureFilter.iml" filepath="$PROJECT_DIR$/TreasureFilter/TreasureFilter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servlet/servlet.iml" filepath="$PROJECT_DIR$/servlet/servlet.iml" />
     </modules>
   </component>
 </project>

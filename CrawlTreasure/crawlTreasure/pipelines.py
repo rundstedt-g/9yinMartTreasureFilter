@@ -8,16 +8,20 @@
 
 import json
 
+import pymysql as pymysql
 from itemadapter import ItemAdapter
 
 
 
 class CrawltreasurePipeline:
     def __init__(self):
-        self.file = open('treasure.json', mode='w', encoding='utf-8')
+        self.connect=pymysql.connect(host='localhost',user='root',password='Wx6874024',db='treasure')
+        self.cursor=self.connect.cursor()
     def process_item(self, item, spider):
-        jsondata = json.dumps(dict(item), ensure_ascii=False) + "\n"
-        self.file.write(jsondata)
+        sqlStatement = "insert into treasure."+item['serverId']+"(id,itemName,price,itemAmount,statu,publicityEndDate,shelfDate,shelfDays,property,skill,followCount,iconPath,itemDesc)VALUES ({},'{}',{},{},'{}','{}','{}',{},'{}','{}',{},'{}','{}')"
+        self.cursor.execute(sqlStatement.format(item['id'],item['itemName'],item['price'],item['itemAmount'],item['statu'],item['publicityEndDate'],item['shelfDate'],item['shelfDays'],item['property'],item['skill'],item['followCount'],item['iconPath'],item['itemDesc']))
+        self.connect.commit()#执行添加
         return item
     def close_spider(self, spider):
-        self.file.close()
+        self.cursor.close()
+        self.connect.close()  #关闭连接

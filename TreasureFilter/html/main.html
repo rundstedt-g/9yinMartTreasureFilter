@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>宝物筛选搜索</title>
+    <link href="../images/favicon.ico" rel="shortcut icon"  type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <script>document.write("<script type='text/javascript' src='../script/version.js?v=" + Date.now() + "'><\/script>");</script>
     <link href="../style/global.css"  type="text/css" rel="stylesheet" />
@@ -31,6 +32,7 @@
             <p>
                 <span>当前服务器:</span>
                 <span>&nbsp;&nbsp;群雄逐鹿</span>
+                <a hef="javascript:;">切服</a>
             </p>
             <p>
                 <span>数据更新时间:</span>
@@ -145,26 +147,25 @@
                     </select>
                 </li>
                 <li class="asc" data-param="N_GRADE">
-                    <ul class="top-nav">
-                        <li ><a href="#">全部套路</a>
-                            <ul>
-                                <li >徒手套路
-                                    <ul>
-                                        <li><a href="#">大力金刚指</a></li>
-                                        <li><a href="#">心佛掌</a></li>
-                                        <li><a href="#">圣梅秘诀(古谱)</a></li>
-                                    </ul>
-                                </li>
-                                <li >双剑套路
-                                    <ul>
-                                        <li><a href="#">九宫剑法</a></li>
-                                        <li><a href="#">忘川剑法</a></li>
-                                    </ul>
-                                </li>
-                                <li >单剑套路</li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <select name="taolu" onChange="setLinkage(this);">
+                        <option value="0">全部套路</option>
+                        <option value="tushou">徒手套路</option>
+                        <option value="danjian">单剑套路</option>
+                        <option value="shuangjian">双剑套路</option>
+                        <option value="dandao">单刀套路</option>
+                        <option value="shuangdao">双刀套路</option>
+                        <option value="bishou">匕首套路</option>
+                        <option value="shuangci">双刺套路</option>
+                        <option value="changgun">长棍套路</option>
+                        <option value="duangun">短棍套路</option>
+                        <option value="anqi">暗器套路</option>
+                        <option value="qimen">奇门套路</option>
+                    </select>
+                </li>
+                <li class="asc" data-param="N_GRADE">
+                    <select id="skill">
+                        <option value="0">选择武学</option>
+                    </select>
                 </li>
             </ul>
         </div>
@@ -200,64 +201,52 @@
     <span class="catagory" title="点击移除关键词" id="{{spanId}}" onclick="catagoryRemove(this)"><i></i>{{catagoryDesc}}</span>
 </script>
 
-<script id="checkGoodsTradeItem" type="template/htmlMode">
-    <div class="pop_mark">
-        <div class="pop">
-            <h2 class="pop_title">物品编号:@{id}</h2>
-            <i class="cancel_btn"></i>
-            <div class="goods_extend scrollbar-dynamic check_goods_extend">
-                <div class="goods_desc">
-                    @{itemDesc}
-                </div>
-            </div>
-        </div>
-    </div>
-</script>
-
-<script id="selling" type="template/htmlMode"> //出售页
-    <div class="goods_block @{__index_mode_bak}">
+<script id="selling" type="template/htmlMode">
+    <div class="goods_block {{__index_mode_bak}}">
         <div class="goods_info open_goods">
             <div class="goods_img tag_box">
-                <img src="@{iconPath}" />
+                <img src="{{iconPath}}" />
                 <div class="tags">
-                    @{marks_bak}
+                    <p style="right: -21px; background-color: rgb(116, 96, 159);" index="3">{{marks_time}}</p>
+                    <br>
+                    <p style="right: -28px; background-color: rgb(195, 83, 139);" index="4">{{marks_bak}}</p>
                 </div>
             </div>
             <dl class="selling_dl">
-                <dt class="goods_name @{itemName_class}">@{issaleFlag_bak}@{itemName}</dt>
-                <dd class="goods_id"><label>物品编号:</label>@{id}<span class="allow_negotiate @{allowNegotiate_bak}">议价</span></dd>
-                <dd class="goods_unit_price"><label>单价:</label>@{unitPrice_bak}</dd>
-                <dd class="goods_amount"><label>数量:</label>@{itemAmount_bak}</dd>
+                <dt class="goods_name {{itemName_class}}">{{issaleFlag_bak}}{{itemName}}</dt>
+                <dd class="goods_id"><label>物品编号:</label>{{id}}</dd>
+                <dd class="goods_unit_price"><label>单价:</label>{{unitPrice_bak}}</dd>
+                <dd class="goods_amount"><label>数量:</label>{{itemAmount_bak}}</dd>
                 <dd class="goods_price margin_b_26">
-                    &yen;@{price_bak}
-                    <span id="{{id}}" class="follow @{isFollow}">@{followCount}</span>
+                    &yen;{{price_bak}}
+                    <span id="{{id}}" class="follow {{isFollow}}">{{followCount}}</span>
                 </dd>
             </dl>
             <i class="red_line"></i>
         </div>
-        <div class="goods_tips">@{itemDesc}</div>
+        <div class="goods_tips">{{#itemDesc}}</div>
     </div>
 </script>
 
-<script id="notice" type="template/htmlMode"> //公示期页
-    <div class="goods_block @{__index_mode_bak}">
+<script id="notice" type="template/htmlMode">
+    <div class="goods_block {{__index_mode_bak}">
         <div class="goods_info open_goods">
             <div class="goods_img tag_box">
-                <img src="@{iconPath}" />
+                <img src="{{iconPath}" />
                 <div class="tags">
-                    @{marks_bak}
+                    {{marks_bak}
                 </div>
             </div>
             <dl class="selling_dl">
-                <dt class="goods_name @{itemName_class}">@{issaleFlag_bak}@{itemName}</dt>
-                <dd class="goods_id"><label>物品编号:</label>@{id}</dd>
-                <dd class="goods_unit_price"><label>单价:</label>@{unitPrice_bak}</dd>
-                <dd class="goods_amount"><label>数量:</label>@{itemAmount_bak}</dd>
-                <dd class="goods_price margin_b_26">&yen;@{price_bak}<span id="{{id}}" class="follow @{isFollow}">@{followCount}</span></dd>
+                <dt class="goods_name {{itemName_class}">{{issaleFlag_bak}{{itemName}</dt>
+                <dd class="goods_id"><label>物品编号:</label>{{id}}</dd>
+                <dd class="goods_unit_price"><label>单价:</label>{{unitPrice_bak}</dd>
+                <dd class="goods_amount"><label>数量:</label>{{itemAmount_bak}</dd>
+                <dd class="goods_price margin_b_26">&yen;{{price_bak}<span id="{{noticeId}}" class="follow {{isFollow}">{{followCount}</span></dd>
             </dl>
             <i class="red_line"></i>
         </div>
-        <div class="goods_tips">@{itemDesc}</div>
+        <div class="goods_tips">{{itemDesc}</div>
     </div>
 </script>
 
