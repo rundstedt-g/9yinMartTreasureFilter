@@ -1,3 +1,4 @@
+var serverId;
 var skills = {
     tushou:['太祖长拳', '捻花功(古谱)', '太极拳(古谱)', '金顶绵掌', '逍遥腿法', '莲花掌', '魔心连环手', '花神七式(无缺)', '心佛掌', '大力金刚指', '降龙掌法(绝世)', '圣梅秘诀(古谱)'],
     danjian:['清风剑法', '洞天箫法', '太阴剑诀', '魅影剑法', '游龙剑法', '寒梅剑法', '天山剑法'],
@@ -12,13 +13,66 @@ var skills = {
     qimen:['寒泉洗心谱', '月明沧海诀']
 }
 $(document).ready(function(){
+    if(checkCookie()){ //若存在cookie，直接进入主页
+        var cookieArea = getCookie('area');
+        var cookieServer = getCookie('server');
+        $.ajax({
+            url: "http://localhost:8080/getServerList", //接口
+            type: "GET", //请求方式为get
+            dataType: "json", //返回数据格式为json
+            success: function(data) { //请求成功完成后要执行的方法
+                callback(data[0]);
+            }
+        })
+        function callback(data) { //显示服务器名，并设置服务器ID
+            var gareaIndex = data.findIndex(a => a.gareaId == cookieArea);
+            var serverIndex = data[gareaIndex]['gameServers'].findIndex(a => a.id == cookieServer);
+            parentId = data[gareaIndex]['gameServers'][serverIndex]['parentId'];
+            if(parentId == 0){
+                serverId = cookieServer;
+                $('#serverName').text(data[gareaIndex]['gameServers'][serverIndex]['serverName']);
+            }
+            else{
+                serverId = parentId;
+                $.each(data,function(i,obj) {
+                    $.each(obj['gameServers'],function(j,tmp) {
+                        if(tmp['id']==parentId){
+                            $('#serverName').text(tmp['serverName']);
+                        }
+                    });
+                });
+            }
+        }
+
+    }
+    else{//无cookie,跳转到选择区服页面
+        location.replace("./toServerList.html");
+    }
+
+    //加载宝物数据
+
+    $.ajax({
+        url: "http://localhost:8080/getTreasure", //接口
+        type: "GET", //请求方式为get
+        dataType: "json", //返回数据格式为json
+        success: function(data) { //请求成功完成后要执行的方法
+            callback(data[0]);
+        }
+    })
+
     //为所有筛选属性添加点击事件
     $('.filter_content').on("click","dd", function() {
-        this.classList.add('selected');
-        var catagory = {spanId:this.getAttribute('data-code'), catagoryDesc:this.innerText};
-        var spanCatagory = template("catagoryMode", catagory);
-        $('.filter_param').append(spanCatagory);
+        if($(".catagory").length < 5){
+            this.classList.add('selected');
+            var catagory = {spanId:this.getAttribute('data-code'), catagoryDesc:this.innerText};
+            var spanCatagory = template("catagoryMode", catagory);
+            $('.filter_param').append(spanCatagory);
+        }
+        else{
+            alert("至多选择5条属性!")
+        }
     });
+
     //设置筛选属性收起和展开
     var oFilterControl = $('.filter_control');
     var oFilterFloor = $('.filter_floor');
@@ -84,13 +138,22 @@ $(document).ready(function(){
     var pageInfo = {"pageId":1,"pageSize":15,"totalCount":1012,"totalPages":68};
     pageList(pageInfo);
 });
-//移出已选择的属性
+
+//移除已选择的单条属性
 function catagoryRemove(obj){
-    console.log(obj.innerText);
-    console.log(obj.id);
     $("dd[data-code='"+obj.id+"']").removeClass('selected');
     obj.remove();
 }
+
+//移除已选择的所有宝物属性
+function removeSelectedCatagory(obj){
+    if($(".catagory").length != 0){
+        $.each($(".catagory"),function(i,obj) {
+            catagoryRemove(obj);
+        });
+    }
+}
+
 //设置套路和武学两个下拉框的二级联动
 function setLinkage(taolu){
     var skill = document.getElementById("skill");
@@ -105,6 +168,7 @@ function setLinkage(taolu){
         skill.options[i+1].value = skills[t][i];
     }
 }
+
 //商品信息块
 function goods_block(){
     var goods = {__index_mode_bak:"",
@@ -127,6 +191,8 @@ function goods_block(){
         $('.goods_item_con').append(goodsBlock);
     }
 }
+
+// 页码栏设置
  function pageList( options, callback, pageCon ){
     var _self = this,
         defaults = {
@@ -183,4 +249,37 @@ function goods_block(){
             callback && callback();
         }
     })
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var cArea = getCookie("area");
+    var cServer = getCookie("server");
+    if (cArea != "" && cServer!=""){
+        return true;
+    } else {
+        return false;
+    }
 }

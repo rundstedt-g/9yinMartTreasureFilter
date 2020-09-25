@@ -658,12 +658,13 @@ body.login_page .login_floor {
     margin-left: 10px;
 }
 .warp .top-menu .logout {
-    background-image: url("../images/refresh.png");
+    background-image: url("../images/logo_jishi.png");
     background-repeat: no-repeat;
     background-position: top;
     float: right;
     font-weight: bold;
     height: 70px;
+    width: 56px;
     line-height: 70px;
     color: #000;
     margin-top: 15px;

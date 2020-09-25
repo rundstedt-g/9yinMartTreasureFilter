@@ -3,12 +3,12 @@ var selectedServer = {areaId: '',
 }
 $(document).ready(function(){
     $.ajax({
-        url: "../data/serverList.json", //json文件位置
+        url: "http://localhost:8080/getServerList", //接口
         type: "GET", //请求方式为get
         dataType: "json", //返回数据格式为json
         success: function(data) { //请求成功完成后要执行的方法
             console.log("游戏区服数据加载成功!")
-            callback(data);
+            callback(data[0]);
         }
     })
     function callback(data){
@@ -65,6 +65,7 @@ function lodeTreasure() {
     //记录本次所选的区服
     setCookie('area', selectedServer['areaId'], 30);
     setCookie('server', selectedServer['serverId'], 30);
+    location.replace("./main.html");
 }
 
 

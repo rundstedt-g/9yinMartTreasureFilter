@@ -27,16 +27,12 @@
 <div class="warp">
     <div class="top-menu">
         <h1 class="logo"><a href="">九阴集市</a></h1>
-        <a href="javascript:;" class="logout" title="重新从官方集市加载当前服务器所有宝物数据">更新数据</a>
+        <a href="http://jishi.woniu.com" class="logout" title="点击进入官方集市" target="_blank"></a>
         <div class="user-name">
             <p>
                 <span>当前服务器:</span>
-                <span>&nbsp;&nbsp;群雄逐鹿</span>
-                <a hef="javascript:;">切服</a>
-            </p>
-            <p>
-                <span>数据更新时间:</span>
-                <span>&nbsp;&nbsp;2020-09-17 01:00:00</span>
+                <span id="serverName"></span>
+                <a href="./toServerList.html">切服</a>
             </p>
         </div>
     </div>
@@ -54,7 +50,7 @@
         </div>
         <div class="filter">
             <div class="filter_top filter_param">
-                <span class="all">所有分类&gt;</span>
+                <span class="all" onclick="removeSelectedCatagory(this)">所有分类&gt;</span>
             </div>
             <div class="filter_sub_catagory">
                 <div class="filter_top"></div>
@@ -128,23 +124,8 @@
                 <li class="default selected" data-param="default">默认排序</li>
                 <li class="asc" data-param="D_PUBLICITY_END_DATE">时间<i></i></li>
                 <li class="asc" data-param="N_PRICE">价格<i></i></li>
-                <li class="asc" data-param="unitPrice">
-                    <select id="pinc">
-                        <option value="7">全部品次</option>
-                        <option value="7">玉</option>
-                        <option value="7">金</option>
-                        <option value="7">银</option>
-                        <option value="7">铜</option>
-                        <option value="7">铁</option>
-                        <option value="7">木</option>
-                    </select>
-                </li>
                 <li class="asc" data-param="N_GRADE">
-                    <select>
-                        <option value="7">全部种类</option>
-                        <option value="7">750宝物</option>
-                        <option value="7">普通宝物</option>
-                    </select>
+                    翡翠墨玉璜：
                 </li>
                 <li class="asc" data-param="N_GRADE">
                     <select name="taolu" onChange="setLinkage(this);">
