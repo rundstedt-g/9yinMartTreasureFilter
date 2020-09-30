@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Tomcat 8.5.57" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.57" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
     <option name="OPEN_IN_BROWSER_URL" value="http://localhost:3000/9yinMartTreasureFilter/TreasureFilter/html/toServerList.html" />
-    <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+    <option name="BROWSER_ID" value="b2a9dca7-9d0b-4e1e-98a8-afb19c1328d2" />
     <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
       <file path="$PROJECT_DIR$">

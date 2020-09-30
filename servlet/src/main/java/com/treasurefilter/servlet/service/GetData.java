@@ -1,5 +1,6 @@
 package com.treasurefilter.servlet.service;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -94,6 +95,17 @@ public class GetData {
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
         ResponseEntity<String> responseEntity=restTemplate.getForEntity("http://jishi.woniu.com/9yin/loadServerList.do?gameId={gameId}&_={}",String.class,params);
+        return responseEntity.getBody();
+    }
+    public String getFollowCount(String serverId, String itemIds){
+        RestTemplate restTemplate=new RestTemplate(); //创建请求
+        Map<String,String> params=new HashMap<>(); //创建参数表
+        params.put("serverId",serverId);
+        params.put("gameId","10");
+        params.put("itemIds",itemIds);
+        long timestamp = new Date().getTime(); //13位的时间戳
+        params.put("_",Long.toString(timestamp));
+        ResponseEntity<String> responseEntity=restTemplate.getForEntity("http://jishi.woniu.com/9yin/anonymous/getItemsFollowCount.do?serverId={serverId}&gameId={gameId}&itemIds={itemIds}&_={}",String.class,params);
         return responseEntity.getBody();
     }
 }

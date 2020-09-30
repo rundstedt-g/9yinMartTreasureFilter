@@ -7,11 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <script>document.write("<script type='text/javascript' src='../script/version.js?v=" + Date.now() + "'><\/script>");</script>
     <link href="../style/global.css"  type="text/css" rel="stylesheet" />
-    <link href="../style/jquery.scrollbar.css"  type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="../script/template.js"></script>
     <script type="text/javascript" src="../script/jquery.min.js"></script>
-    <script type="text/javascript" src="../script/jquery.scrollbar.js"></script>
-    <script type="text/javascript" src="script/anonymousTopMenu.js"></script>
     <script type="text/javascript">
         var _hmt = _hmt || [];
         (function() {
@@ -43,9 +40,9 @@
             <div class="search_box">
                 <a class="btn" title="点击搜索">&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
-            <ul>
-                <li data-page="selling" class="selected"><a href="#selling">出售物品</a></li>
-                <li data-page="notice"><a href="#notice">公示期物品</a></li>
+            <ul id="dataPage">
+                <li data-page="Selling" class="selected"><a href="#selling">出售物品</a></li>
+                <li data-page="Notice"><a href="#notice">公示期物品</a></li>
             </ul>
         </div>
         <div class="filter">
@@ -128,7 +125,7 @@
                     翡翠墨玉璜：
                 </li>
                 <li class="asc" data-param="N_GRADE">
-                    <select name="taolu" onChange="setLinkage(this);">
+                    <select id="taolu">
                         <option value="0">全部套路</option>
                         <option value="tushou">徒手套路</option>
                         <option value="danjian">单剑套路</option>
@@ -144,7 +141,7 @@
                     </select>
                 </li>
                 <li class="asc" data-param="N_GRADE">
-                    <select id="skill">
+                    <select id="skill" >
                         <option value="0">选择武学</option>
                     </select>
                 </li>
@@ -194,7 +191,7 @@
                 </div>
             </div>
             <dl class="selling_dl">
-                <dt class="goods_name {{itemName_class}}">{{issaleFlag_bak}}{{itemName}}</dt>
+                <dt class="goods_name {{itemName_class}}"><i {{issaleFlag_bak}}></i>{{itemName}}</dt>
                 <dd class="goods_id"><label>物品编号:</label>{{id}}</dd>
                 <dd class="goods_unit_price"><label>单价:</label>{{unitPrice_bak}}</dd>
                 <dd class="goods_amount"><label>数量:</label>{{itemAmount_bak}}</dd>
@@ -210,24 +207,24 @@
 </script>
 
 <script id="notice" type="template/htmlMode">
-    <div class="goods_block {{__index_mode_bak}">
+    <div class="goods_block {{__index_mode_bak}}">
         <div class="goods_info open_goods">
             <div class="goods_img tag_box">
-                <img src="{{iconPath}" />
+                <img src="{{iconPath}}" />
                 <div class="tags">
                     {{marks_bak}
                 </div>
             </div>
             <dl class="selling_dl">
                 <dt class="goods_name {{itemName_class}">{{issaleFlag_bak}{{itemName}</dt>
-                <dd class="goods_id"><label>物品编号:</label>{{id}}</dd>
+                <dd class="goods_id"><label>物品编号:</label>{{noticeId}}</dd>
                 <dd class="goods_unit_price"><label>单价:</label>{{unitPrice_bak}</dd>
                 <dd class="goods_amount"><label>数量:</label>{{itemAmount_bak}</dd>
                 <dd class="goods_price margin_b_26">&yen;{{price_bak}<span id="{{noticeId}}" class="follow {{isFollow}">{{followCount}</span></dd>
             </dl>
             <i class="red_line"></i>
         </div>
-        <div class="goods_tips">{{itemDesc}</div>
+        <div class="goods_tips">{{#itemDesc}}</div>
     </div>
 </script>
 

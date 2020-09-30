@@ -26,8 +26,15 @@ public class GetTreasure {
     }
 
     @RequestMapping(value = "/getServerList",method = RequestMethod.GET) //将本方法映射到url
-    public String getTreasure(){
+    public String getServerList(){
         GetData gd = new GetData();
         return gd.getServerList();
+    }
+
+    @RequestMapping(value = "/getFollowCount",method = RequestMethod.GET) //将本方法映射到url
+    public String getFollowCount(@RequestParam("serverId") String serverId,
+                                 @RequestParam("itemIds") String itemIds){
+        GetData gd = new GetData();
+        return gd.getFollowCount(serverId,itemIds);
     }
 }
