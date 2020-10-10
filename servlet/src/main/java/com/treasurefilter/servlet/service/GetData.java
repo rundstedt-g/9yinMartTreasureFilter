@@ -1,8 +1,12 @@
 package com.treasurefilter.servlet.service;
 
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.client.RestTemplate;
+
 
 import java.util.Date;
 import java.util.HashMap;
@@ -85,7 +89,11 @@ public class GetData {
                 }
             }
         }
-        ResponseEntity<String> responseEntity=restTemplate.getForEntity("http://jishi.woniu.com/9yin/anonymous/find"+status+"Goods.do?serverId={serverId}&gameId={gameId}&typeNameParam={typeNameParam}"+urlSortWay+urlSortField+urlPageIndex+urlItemName+bwa+"&_={}",String.class,params);
+
+        genHttpHeaders requestHeaders = new genHttpHeaders();
+        HttpHeaders headers = requestHeaders.gen("anonymousPage"); //生成请求头
+        HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
+        ResponseEntity<String> responseEntity=restTemplate.exchange("http://jishi.woniu.com/9yin/anonymous/find"+status+"Goods.do?serverId={serverId}&gameId={gameId}&typeNameParam={typeNameParam}"+urlSortWay+urlSortField+urlPageIndex+urlItemName+bwa+"&_={}",HttpMethod.GET,requestEntity,String.class,params);
         return responseEntity.getBody();
     }
     public String getServerList(){
@@ -94,7 +102,11 @@ public class GetData {
         params.put("gameId","10");
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
-        ResponseEntity<String> responseEntity=restTemplate.getForEntity("http://jishi.woniu.com/9yin/loadServerList.do?gameId={gameId}&_={}",String.class,params);
+
+        genHttpHeaders requestHeaders = new genHttpHeaders();
+        HttpHeaders headers = requestHeaders.gen("toServerList"); //生成请求头
+        HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
+        ResponseEntity<String> responseEntity=restTemplate.exchange("http://jishi.woniu.com/9yin/loadServerList.do?gameId={gameId}&_={}",HttpMethod.GET,requestEntity,String.class,params);
         return responseEntity.getBody();
     }
     public String getFollowCount(String serverId, String itemIds){
@@ -105,7 +117,11 @@ public class GetData {
         params.put("itemIds",itemIds);
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
-        ResponseEntity<String> responseEntity=restTemplate.getForEntity("http://jishi.woniu.com/9yin/anonymous/getItemsFollowCount.do?serverId={serverId}&gameId={gameId}&itemIds={itemIds}&_={}",String.class,params);
+
+        genHttpHeaders requestHeaders = new genHttpHeaders();
+        HttpHeaders headers = requestHeaders.gen("anonymousPage"); //生成请求头
+        HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
+        ResponseEntity<String> responseEntity=restTemplate.exchange("http://jishi.woniu.com/9yin/anonymous/getItemsFollowCount.do?serverId={serverId}&gameId={gameId}&itemIds={itemIds}&_={}",HttpMethod.GET,requestEntity,String.class,params);
         return responseEntity.getBody();
     }
 }

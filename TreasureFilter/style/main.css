@@ -1263,11 +1263,11 @@ body.login_page .login_floor {
 .copy_right p {
     color: #B2B2B2;
 }
-#developerLink{
-    color: #b2b2b2;
+.developerLink{
+    color: #928f8f;
 }
-#developerLink:hover{
-    color: #867d7d;
+.developerLink:hover{
+    color: #605d5d;
 }
 .copy_right ul {
     width: 535px;
@@ -2529,4 +2529,27 @@ body.login_page .login_floor {
 .item_goods_info .tags p {
     font-size: 12px; padding: 0 5px; border-radius: 2px; color: #fff;
     display: inline-block; text-indent: 0; margin: 0 2px;
+}
+
+.pop_mark .qrCode{
+    width: 190px;
+    height: 252px;
+    position: fixed;
+    top: 35%;
+    left: 44%;
+    background-image: url("../images/developer.png");
+}
+.pop_mark .qrCode .cancel_btn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: -15px;
+    top: -15px;
+    background-image: url("../images/cancel.png");
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.pop_mark .qrCode .cancel_btn:hover {
+    background-image: url("../images/cancel_hover.png");
 }

@@ -46,15 +46,12 @@ public class genHttpHeaders {
         int randomIndex = r.nextInt(uaArray.length);
         return uaArray[randomIndex];
     }
-    public HttpHeaders getdata(){
+    public HttpHeaders gen(String refererPage){
         HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.add("Accept", "application/json, text/javascript, */*; q=0.01");
-        requestHeaders.add("Accept-Encoding", "gzip, deflate");
-        requestHeaders.add("Accept-Language", "zh-Hans-CN, zh-Hans; q=0.5");
         requestHeaders.add("Connection", "Keep-Alive");
         requestHeaders.add("Host", "jishi.woniu.com");
-        requestHeaders.add("Referer", "http://jishi.woniu.com/resources/9yin/anonymousPage.html");
-        requestHeaders.add("User-Agent", "1.0");
+        requestHeaders.add("Referer", "http://jishi.woniu.com/resources/9yin/"+refererPage+".html");
+        requestHeaders.add("User-Agent", randomGetUA());
         requestHeaders.add("X-Requested-With", "XMLHttpRequest");
         return requestHeaders;
     }

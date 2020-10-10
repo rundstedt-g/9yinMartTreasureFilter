@@ -121,10 +121,10 @@
                 <li class="default selected" data-param="default">默认排序</li>
                 <li class="asc" data-param="D_PUBLICITY_END_DATE">时间<i></i></li>
                 <li class="asc" data-param="N_PRICE">价格<i></i></li>
-                <li class="asc" data-param="N_GRADE">
+                <li class="asc" >
                     翡翠墨玉璜：
                 </li>
-                <li class="asc" data-param="N_GRADE">
+                <li class="asc" >
                     <select id="taolu">
                         <option value="0">全部套路</option>
                         <option value="tushou">徒手套路</option>
@@ -140,7 +140,7 @@
                         <option value="qimen">奇门套路</option>
                     </select>
                 </li>
-                <li class="asc" data-param="N_GRADE">
+                <li class="asc" >
                     <select id="skill" >
                         <option value="0">选择武学</option>
                     </select>
@@ -168,11 +168,26 @@
         <a class="links" href="http://9yin.azurewebsites.net/" target="_blank">经脉模拟</a>
     </div>
     <div class="copy_right">
-        <p class="textCenter">Copyleft 2020 Maintained by
-            <a href="https://tieba.baidu.com/home/main?id=tb.1.ddff996a.awKMp5i3KpxvkrT86-BB6Q&fr=userbar" id="developerLink" target="_blank">拖延癌晚期</a>
+        <p class="textCenter">
+            网站数据资源全部来源于蜗牛集市
+            ，仅供学习参考之用，请勿用于商业用途，否则后果自负，本站不承担任何连带责任。
+            如有侵权请
+            <a class="developerLink" target="_blank" onclick="pop(this)">联系</a>
+            删除。
         </p>
     </div>
+</div>
+
+<div class="pop_mark">
+    <div class="qrCode">
+        <i class="cancel_btn" onclick="cancel(this)"></i>
     </div>
+</div>
+
+<div class="mark loading">
+    <div></div>
+</div>
+
 <div class="item_desc"></div>
 
 <script id="catagoryMode" type="template/htmlMode">
