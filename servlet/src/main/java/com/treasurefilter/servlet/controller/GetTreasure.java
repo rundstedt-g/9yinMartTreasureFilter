@@ -37,4 +37,11 @@ public class GetTreasure {
         GetData gd = new GetData();
         return gd.getFollowCount(serverId,itemIds);
     }
+
+    @RequestMapping(value = "/getTradeItem",method = RequestMethod.GET) //将本方法映射到url
+    public String getTradeItem(@RequestParam("serverId") String serverId,
+                                 @RequestParam("itemId") String itemId){
+        GetData gd = new GetData();
+        return gd.getTradeItem(serverId,itemId);
+    }
 }

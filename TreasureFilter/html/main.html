@@ -9,11 +9,11 @@
     <link href="../style/global.css"  type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="../script/template.js"></script>
     <script type="text/javascript" src="../script/jquery.min.js"></script>
-    <script type="text/javascript">
+    <script>
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "http://hm.baidu.com/h.js?5e7e25ab4d3f582093eaa02db58d288c";
+            hm.src = "https://hm.baidu.com/hm.js?a86a12a265ce7d1d140d4ef5196831e7";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
@@ -121,10 +121,10 @@
                 <li class="default selected" data-param="default">默认排序</li>
                 <li class="asc" data-param="D_PUBLICITY_END_DATE">时间<i></i></li>
                 <li class="asc" data-param="N_PRICE">价格<i></i></li>
-                <li class="asc" >
+                <li >
                     翡翠墨玉璜：
                 </li>
-                <li class="asc" >
+                <li  >
                     <select id="taolu">
                         <option value="0">全部套路</option>
                         <option value="tushou">徒手套路</option>
@@ -140,7 +140,7 @@
                         <option value="qimen">奇门套路</option>
                     </select>
                 </li>
-                <li class="asc" >
+                <li >
                     <select id="skill" >
                         <option value="0">选择武学</option>
                     </select>
@@ -214,28 +214,6 @@
                     &yen;{{price_bak}}
                     <span id="{{id}}" class="follow {{isFollow}}">{{followCount}}</span>
                 </dd>
-            </dl>
-            <i class="red_line"></i>
-        </div>
-        <div class="goods_tips">{{#itemDesc}}</div>
-    </div>
-</script>
-
-<script id="notice" type="template/htmlMode">
-    <div class="goods_block {{__index_mode_bak}}">
-        <div class="goods_info open_goods">
-            <div class="goods_img tag_box">
-                <img src="{{iconPath}}" />
-                <div class="tags">
-                    {{marks_bak}
-                </div>
-            </div>
-            <dl class="selling_dl">
-                <dt class="goods_name {{itemName_class}">{{issaleFlag_bak}{{itemName}</dt>
-                <dd class="goods_id"><label>物品编号:</label>{{noticeId}}</dd>
-                <dd class="goods_unit_price"><label>单价:</label>{{unitPrice_bak}</dd>
-                <dd class="goods_amount"><label>数量:</label>{{itemAmount_bak}</dd>
-                <dd class="goods_price margin_b_26">&yen;{{price_bak}<span id="{{noticeId}}" class="follow {{isFollow}">{{followCount}</span></dd>
             </dl>
             <i class="red_line"></i>
         </div>

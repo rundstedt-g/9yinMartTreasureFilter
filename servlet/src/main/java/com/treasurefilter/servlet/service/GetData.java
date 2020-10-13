@@ -124,4 +124,19 @@ public class GetData {
         ResponseEntity<String> responseEntity=restTemplate.exchange("http://jishi.woniu.com/9yin/anonymous/getItemsFollowCount.do?serverId={serverId}&gameId={gameId}&itemIds={itemIds}&_={}",HttpMethod.GET,requestEntity,String.class,params);
         return responseEntity.getBody();
     }
+    public String getTradeItem(String serverId, String itemId){
+        RestTemplate restTemplate=new RestTemplate(); //创建请求
+        Map<String,String> params=new HashMap<>(); //创建参数表
+        params.put("serverId",serverId);
+        params.put("gameId","10");
+        params.put("itemId",itemId);
+        long timestamp = new Date().getTime(); //13位的时间戳
+        params.put("_",Long.toString(timestamp));
+
+        genHttpHeaders requestHeaders = new genHttpHeaders();
+        HttpHeaders headers = requestHeaders.gen("anonymousPage"); //生成请求头
+        HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
+        ResponseEntity<String> responseEntity=restTemplate.exchange("http://jishi.woniu.com/9yin/anonymous/getTradeItem.do?serverId={serverId}&gameId={gameId}&itemId={itemId}&_={}",HttpMethod.GET,requestEntity,String.class,params);
+        return responseEntity.getBody();
+    }
 }
