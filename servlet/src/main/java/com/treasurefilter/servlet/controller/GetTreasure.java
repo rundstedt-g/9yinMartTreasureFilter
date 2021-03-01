@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @RestController//这是一个控制器并只返回数据不寻找视图
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins =  {"http://localhost:3000", "http://47.116.134.96:3000", "http://treasure.rundstedt.cn"})
 public class GetTreasure {
     @RequestMapping(value = "/getTreasure",method = RequestMethod.GET) //将本方法映射到url
     public String getTreasure(@RequestParam("status") String status,
