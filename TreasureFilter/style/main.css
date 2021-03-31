@@ -229,7 +229,7 @@ body.show-top {
     background-position: center 70px;
 }
 body.content_page {
-    background-image: url("../images/content_bg.jpg");
+
 }
 body.login_page {
     background-image: url("../images/content_bg.jpg");
@@ -254,16 +254,7 @@ body.login_page .login_floor {
     right: 0;
     background-image: url("../images/logo_foor.jpg");
 }
-.top-warp {
-    height: 143px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-image: url("../images/top_eye.png");
-    background-repeat: no-repeat;
-    background-position: center bottom;
-}
+
 @keyframes tipsShow {
     0% {
         -webkit-transform: translateY(15px);
@@ -456,8 +447,9 @@ body.login_page .login_floor {
     color: #666;
 }
 .warp {
-    width: 962px;
+    width: 1200px;
     margin: 0 auto;
+    background-color: white;
 }
 .warp.login_warp {
     width: 910px;
@@ -582,6 +574,8 @@ body.login_page .login_floor {
     height: 70px;
     position: relative;
     z-index: 11;
+    width: 980px;
+    margin: 0 auto;
 }
 .warp .top-menu h1.logo {
     width: 283px;
@@ -699,6 +693,7 @@ body.login_page .login_floor {
 .content_warp.goods_menu .link_list ul {
     width: 100%;
     height: 56px;
+    border-top: 1px solid #e72e00;
     border-bottom: 1px solid #e72e00;
 }
 .content_warp.goods_menu .link_list ul li {
@@ -1225,9 +1220,9 @@ body.login_page .login_floor {
     margin-left: 20px;
 }
 .footer {
-    background-image: url("../images/content_floor.png");
-    background-repeat: no-repeat;
-    background-position: center -138px;
+    background-color: white;
+    width: 1200px;
+    margin: 0 auto;
     height: 207px;
     padding-top: 100px;
     position: relative;
@@ -2552,4 +2547,28 @@ body.login_page .login_floor {
 }
 .pop_mark .qrCode .cancel_btn:hover {
     background-image: url("../images/cancel_hover.png");
+}
+
+.web_bg{
+
+    /* 这三句是让整个div固定在屏幕的最上方和最左方 */
+    position:fixed; /*生成绝对定位的元素，相对于浏览器窗口进行定位。*/
+    top: 0;
+    left: 0;
+
+    margin:0;
+    width:100%;
+    height:100%;
+    min-width: 1000px; /*实现让屏幕宽度在1000px以内时，div的大小保持不变，也就是说在这种情况下，缩放屏幕宽度时，图片不要缩放（只有在1000px以内才有效）*/
+    z-index:-1; /*让整个div在HTML页面中各个层级的下方*/
+    zoom: 1; /*设置或检索对象的缩放比例。此处用浮点数来定义缩放比例为100%。*/
+    background-color: black;
+    background-repeat: no-repeat; /*定义图像的平铺模式, no-repeat 背景图像将仅显示一次。*/
+
+    /*让图片随屏幕大小同步缩放*/
+    background-size: cover; /*规定背景图像的尺寸：cover 把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。 背景图像的某些部分也许无法显示在背景定位区域中。*/
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+
+    background-position: center 0; /*设置背景图像的起始位置。*/
 }
