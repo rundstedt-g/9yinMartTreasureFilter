@@ -269,7 +269,7 @@ public class GetRoles {
         Map response = new HashMap();
 
         try {
-            File txtFile = new File("D:/project/CrawlRolesByFilter/roleByFilter/roleByFilter/end.txt");
+            File txtFile = new File("/srv/scrapy/roleByFilter/roleByFilter/end.txt");
             InputStreamReader reader = new InputStreamReader(new FileInputStream(txtFile)); // 建立一个输入流对象reader
             BufferedReader br = new BufferedReader(reader); // 建立一个对象，它把文件内容转成计算机能读懂的语言
 
