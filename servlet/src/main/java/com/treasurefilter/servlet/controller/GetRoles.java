@@ -1,6 +1,7 @@
 package com.treasurefilter.servlet.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins =  {"http://localhost:63342", "http://localhost:8000","http://localhost:8001", "http://47.116.134.96:3002", "http://roles.rundstedt.cn"})
+@CrossOrigin(origins =  {"http://localhost:8000", "http://localhost:8001","http://localhost:8002", "http://47.116.134.96:3002", "http://roles.rundstedt.cn"})
 public class GetRoles {
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -24,13 +25,19 @@ public class GetRoles {
                                  @RequestParam(value = "bwa4",required = false,defaultValue = "") String bwa4,
                                  @RequestParam(value = "bwa5",required = false,defaultValue = "") String bwa5,
                                  @RequestParam(value = "skill",required = false,defaultValue = "") String skill,
-                                 @RequestParam(value = "is750",required = false,defaultValue = "false") String is750)throws IOException {
+                                 @RequestParam(value = "is750",required = false,defaultValue = "false") String is750,
+                                 @RequestParam(value = "server",required = false,defaultValue = "") String server)throws IOException {
 
         String sql = "";
+        String serversql = "";
+
+        if(!server.equals("")){
+            serversql = "WHERE role.server = '" + server + "'";
+        }
 
         // 无参情况
         if(bwa1.equals("") && bwa2.equals("") && bwa3.equals("") && bwa4.equals("") && bwa5.equals("") && skill.equals("") && is750.equals("false")){
-            sql = "SELECT * FROM role ORDER BY role.price";
+            sql = "SELECT * FROM role " + serversql + " ORDER BY role.price";
         }
         // 有参
         else{
@@ -79,16 +86,25 @@ public class GetRoles {
                 }
                 paramSql += ") ";
             }
+
+            if(!server.equals("")){
+                serversql = "AND role.server = '" + server + "' ";
+            }
+            else {
+                serversql = "";
+            }
+
             // 组合sql语句
             sql = "SELECT tmp.roleID,role.name,role.gender,role.school,role.neigongyanxiu,role.price,role.status,role.server " +
                     "FROM (SELECT treasure.`roleID` " +
                      clause1 + skillSql + is750sql + paramSql +
                      clause2 + paramCountSql + ") AS tmp ,role " +
-                    "WHERE tmp.roleID = role.roleID " +
+                    "WHERE tmp.roleID = role.roleID " + serversql +
                     "GROUP BY tmp.roleID " +
                     "HAVING COUNT(tmp.roleID)>4 " +
                     "ORDER BY role.price";
         }
+        System.out.println(sql);
         List response = jdbcTemplate.queryForList(sql); //执行 sql查询
         return response;
     }
@@ -103,15 +119,21 @@ public class GetRoles {
                                       @RequestParam(value = "wx4",required = false,defaultValue = "") String wx4,
                                       @RequestParam(value = "ts4",required = false,defaultValue = "") String ts4,
                                       @RequestParam(value = "wx5",required = false,defaultValue = "") String wx5,
-                                      @RequestParam(value = "ts5",required = false,defaultValue = "") String ts5)throws IOException {
+                                      @RequestParam(value = "ts5",required = false,defaultValue = "") String ts5,
+                                      @RequestParam(value = "server",required = false,defaultValue = "") String server)throws IOException {
 
         String sql = "";
         String clause = "";
         String count = "";
+        String serversql = "";
+
+        if(!server.equals("")){
+            serversql = "WHERE role.server = '" + server + "'";
+        }
 
         // 无参情况
         if(wx1.equals("") && wx2.equals("") && wx3.equals("") && wx4.equals("") && wx5.equals("")){
-            sql = "SELECT * FROM role ORDER BY role.price";
+            sql = "SELECT * FROM role " + serversql + " ORDER BY role.price";
         }
         // 有参
         else{
@@ -136,16 +158,24 @@ public class GetRoles {
                 }
                 clause += ") ";
             }
+
+            if(!server.equals("")){
+                serversql = "AND role.server = '" + server + "' ";
+            }
+            else {
+                serversql = "";
+            }
+
             sql = "SELECT role.roleID,role.name,role.gender,role.school,role.neigongyanxiu,role.price,role.status,role.server " +
                     "FROM role,threeskills " +
                     "WHERE role.`roleID`=threeskills.`roleID` AND " +
-                    clause +
+                    clause + serversql +
                     "GROUP BY role.roleID " +
                     "HAVING COUNT(role.roleID)>" + count +
                     " ORDER BY role.price";
 
         }
-
+        System.out.println(sql);
         List response = jdbcTemplate.queryForList(sql);
 
         return response;
@@ -156,15 +186,21 @@ public class GetRoles {
                                @RequestParam(value = "skin2",required = false,defaultValue = "") String skin2,
                                @RequestParam(value = "skin3",required = false,defaultValue = "") String skin3,
                                @RequestParam(value = "skin4",required = false,defaultValue = "") String skin4,
-                               @RequestParam(value = "skin5",required = false,defaultValue = "") String skin5)throws IOException {
+                               @RequestParam(value = "skin5",required = false,defaultValue = "") String skin5,
+                               @RequestParam(value = "server",required = false,defaultValue = "") String server)throws IOException {
 
         String sql = "";
         String clause = "";
         String count = "";
+        String serversql = "";
+
+        if(!server.equals("")){
+            serversql = "WHERE role.server = '" + server + "'";
+        }
 
         // 无参情况
         if(skin1.equals("") && skin2.equals("") && skin3.equals("") && skin4.equals("") && skin5.equals("")){
-            sql = "SELECT * FROM role ORDER BY role.price";
+            sql = "SELECT * FROM role " + serversql + " ORDER BY role.price";
         }
         // 有参
         else {
@@ -189,15 +225,23 @@ public class GetRoles {
                 }
                 clause += ") ";
             }
+
+            if(!server.equals("")){
+                serversql = "AND role.server = '" + server + "' ";
+            }
+            else {
+                serversql = "";
+            }
+
             sql = "SELECT role.roleID,role.name,role.gender,role.school,role.neigongyanxiu,role.price,role.status,role.server " +
                     "FROM role,skin " +
                     "WHERE role.`roleID`=skin.`roleID` AND " +
-                    clause +
+                    clause + serversql +
                     "GROUP BY role.roleID " +
                     "HAVING COUNT(role.roleID)>" + count +
                     " ORDER BY role.price";
         }
-
+        System.out.println(sql);
         List response = jdbcTemplate.queryForList(sql);
 
         return response;
@@ -249,6 +293,22 @@ public class GetRoles {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return response;
+    }
+
+    @GetMapping(value="/byName")
+    @ResponseStatus(HttpStatus.OK)
+    public List findByName(@RequestParam("name") String name){
+        String sql = "SELECT * FROM role WHERE role.`name` LIKE '%"+ name +"%'";
+        List response = jdbcTemplate.queryForList(sql);
+        return response;
+    }
+
+    @GetMapping(value="/getServers")
+    @ResponseStatus(HttpStatus.OK)
+    public List getServers(){
+        String sql = "SELECT (@sn :=@sn + 1) sn, a.server FROM (SELECT DISTINCT role.`server` FROM role) a,(SELECT @sn :=0) b";
+        List response = jdbcTemplate.queryForList(sql);
         return response;
     }
 }
