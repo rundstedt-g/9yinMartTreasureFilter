@@ -1,6 +1,7 @@
 package com.treasurefilter.servlet.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ import java.util.Map;
 public class GetRoles {
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Value("${scrapy-roleByFilter-endTxt}") String endTxt;
 
     @RequestMapping(value="/byTreasure", method= RequestMethod.GET)
     public List searchByTreasure(@RequestParam(value = "bwa1",required = false,defaultValue = "") String bwa1,
@@ -269,7 +271,7 @@ public class GetRoles {
         Map response = new HashMap();
 
         try {
-            File txtFile = new File("/srv/scrapy/roleByFilter/roleByFilter/end.txt");
+            File txtFile = new File(endTxt);
             InputStreamReader reader = new InputStreamReader(new FileInputStream(txtFile)); // 建立一个输入流对象reader
             BufferedReader br = new BufferedReader(reader); // 建立一个对象，它把文件内容转成计算机能读懂的语言
 
@@ -298,8 +300,28 @@ public class GetRoles {
 
     @GetMapping(value="/byName")
     @ResponseStatus(HttpStatus.OK)
-    public List findByName(@RequestParam("name") String name){
-        String sql = "SELECT * FROM role WHERE role.`name` LIKE '%"+ name +"%'";
+    public List findByName(@RequestParam(value = "name",required = false,defaultValue = "") String name,
+                           @RequestParam(value = "server",required = false,defaultValue = "") String server){
+        String clause = "";
+        if(!name.equals("") || !server.equals("")){
+            clause += "WHERE ";
+        }
+
+        if(!name.equals("")){
+            clause += "role.`name` LIKE '%"+ name +"%' ";
+        }
+
+        if(!server.equals("")){
+            String andChar = "";
+            if(!name.equals("")){
+                andChar += "AND ";
+            }
+            clause += andChar + "role.server = '" + server + "' ";
+        }
+
+        String sql = "SELECT * FROM role " + clause + "ORDER BY role.price";
+
+        System.out.println(sql);
         List response = jdbcTemplate.queryForList(sql);
         return response;
     }
