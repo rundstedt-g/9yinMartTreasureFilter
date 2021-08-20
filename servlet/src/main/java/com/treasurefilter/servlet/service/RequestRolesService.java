@@ -79,25 +79,25 @@ public class RequestRolesService {
         return all;
     }
 
-    public RoleContent getRoleContent(String serverId, String roleUid){
-        List<String> baowu = parseBaoWuBox(serverId,roleUid);
+    public RoleContent getRoleContent(String serverId, String itemId){
+        List<String> baowu = parseBaoWuBox(serverId,itemId);
 
-        Map<String, ArrayList> equip = parseEquip(serverId, roleUid);
+        Map<String, ArrayList> equip = parseEquip(serverId, itemId);
         List<String> baowuOfBackpack = equip.get("baowuOfBackpack");
         List<String> threeSkills = equip.get("threeSkills");
         List<String> twoSkills = equip.get("twoSkills");
         List<String> wawa = equip.get("wawa");
         List<String> wawaOfBackpack = equip.get("wawaOfBackpack");
 
-        List<Neigong> neigongs = parseNeigong(serverId,roleUid);
+        List<Neigong> neigongs = parseNeigong(serverId,itemId);
 
-        Map<String, ArrayList> wuxue = parseWuxue(serverId, roleUid);
+        Map<String, ArrayList> wuxue = parseWuxue(serverId, itemId);
         List<Wuxue> gupuWuxues = wuxue.get("gupuWuxues");
         List<Wuxue> _99Wuxues = wuxue.get("_99Wuxues");
 
-        List<Jingmai> jingmais = parseJingmai(serverId,roleUid);
-        List<UseCardRec> useCardRecList = parseUseCardRec(serverId,roleUid);
-        List<String> mounts = parseMount(serverId,roleUid);
+        List<Jingmai> jingmais = parseJingmai(serverId,itemId);
+        List<UseCardRec> useCardRecList = parseUseCardRec(serverId,itemId);
+        List<String> mounts = parseMount(serverId,itemId);
 
         return new RoleContent(baowu,baowuOfBackpack,threeSkills,twoSkills,wawa,wawaOfBackpack,neigongs,gupuWuxues,_99Wuxues,jingmais,useCardRecList,mounts);
     }
@@ -151,10 +151,9 @@ public class RequestRolesService {
             role.setGrade(itemJ.getString("grade").toString().length()<4?itemJ.getString("gradeName").toString():itemJ.getString("grade").toString());
             role.setGender(itemJ.get("gender").toString());
             role.setPrice(itemJ.get("price").toString());
-            role.setRoleUid(itemJ.get("sellerGameId").toString());
             role.setStatus(status.equals("Notice")?"公示期":"在售");
-            role.setNeigongyanxiu(parseNeigongyanxiu(serverId,role.getRoleUid()));
-            role.setSchool(parseSchool(serverId,role.getRoleUid()));
+            role.setNeigongyanxiu(parseNeigongyanxiu(serverId,role.getId()));
+            role.setSchool(parseSchool(serverId,role.getId()));
             role.setServer(getServerName(serverId));
 
             roles.add(role);
@@ -168,12 +167,12 @@ public class RequestRolesService {
         return roles;
     }
 
-    public String parseNeigongyanxiu(String serverId, String roleUid){
+    public String parseNeigongyanxiu(String serverId, String itemId){
         RestTemplate restTemplate=new RestTemplate(); //创建请求
 
         Map<String,String> params=new HashMap<>(); //创建参数表
         params.put("serverId",serverId);
-        params.put("roleUid",roleUid);
+        params.put("itemId",itemId);
         params.put("type","OtherProp");
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
@@ -183,8 +182,8 @@ public class RequestRolesService {
         HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
 
         ResponseEntity<String> responseEntity=restTemplate.exchange(woniuJishiUrl
-                        + "roleMsg.do?"
-                        + "serverId={serverId}&roleUid={roleUid}&type={type}&_={_}",
+                        + "roleMsgInfo.do?"
+                        + "serverId={serverId}&itemId={itemId}&type={type}&_={_}",
                 HttpMethod.GET,requestEntity,String.class,params);
         String content = responseEntity.getBody();
 
@@ -208,12 +207,12 @@ public class RequestRolesService {
         return neigongyanxiu;
     }
 
-    public String parseSchool(String serverId, String roleUid){
+    public String parseSchool(String serverId, String itemId){
         RestTemplate restTemplate=new RestTemplate(); //创建请求
 
         Map<String,String> params=new HashMap<>(); //创建参数表
         params.put("serverId",serverId);
-        params.put("roleUid",roleUid);
+        params.put("itemId",itemId);
         params.put("type","NeiGongContainer");
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
@@ -223,8 +222,8 @@ public class RequestRolesService {
         HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
 
         ResponseEntity<String> responseEntity=restTemplate.exchange(woniuJishiUrl
-                        + "roleMsg.do?"
-                        + "serverId={serverId}&roleUid={roleUid}&type={type}&_={_}",
+                        + "roleMsgInfo.do?"
+                        + "serverId={serverId}&itemId={itemId}&type={type}&_={_}",
                 HttpMethod.GET,requestEntity,String.class,params);
         String content = responseEntity.getBody();
 
@@ -293,12 +292,12 @@ public class RequestRolesService {
         return school.toString();
     }
 
-    public List<Neigong> parseNeigong(String serverId, String roleUid){
+    public List<Neigong> parseNeigong(String serverId, String itemId){
         RestTemplate restTemplate=new RestTemplate(); //创建请求
 
         Map<String,String> params=new HashMap<>(); //创建参数表
         params.put("serverId",serverId);
-        params.put("roleUid",roleUid);
+        params.put("itemId",itemId);
         params.put("type","NeiGongContainer");
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
@@ -308,8 +307,8 @@ public class RequestRolesService {
         HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
 
         ResponseEntity<String> responseEntity=restTemplate.exchange(woniuJishiUrl
-                        + "roleMsg.do?"
-                        + "serverId={serverId}&roleUid={roleUid}&type={type}&_={_}",
+                        + "roleMsgInfo.do?"
+                        + "serverId={serverId}&itemId={itemId}&type={type}&_={_}",
                 HttpMethod.GET,requestEntity,String.class,params);
         String content = responseEntity.getBody();
 
@@ -339,12 +338,12 @@ public class RequestRolesService {
         return neigongs;
     }
 
-    public Map<String, ArrayList> parseWuxue(String serverId, String roleUid){
+    public Map<String, ArrayList> parseWuxue(String serverId, String itemId){
         RestTemplate restTemplate=new RestTemplate(); //创建请求
 
         Map<String,String> params=new HashMap<>(); //创建参数表
         params.put("serverId",serverId);
-        params.put("roleUid",roleUid);
+        params.put("itemId",itemId);
         params.put("type","SkillContainer");
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
@@ -354,8 +353,8 @@ public class RequestRolesService {
         HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
 
         ResponseEntity<String> responseEntity=restTemplate.exchange(woniuJishiUrl
-                        + "roleMsg.do?"
-                        + "serverId={serverId}&roleUid={roleUid}&type={type}&_={_}",
+                        + "roleMsgInfo.do?"
+                        + "serverId={serverId}&itemId={itemId}&type={type}&_={_}",
                 HttpMethod.GET,requestEntity,String.class,params);
         String content = responseEntity.getBody();
 
@@ -409,12 +408,12 @@ public class RequestRolesService {
         return result;
     }
 
-    public List<Jingmai> parseJingmai(String serverId, String roleUid){
+    public List<Jingmai> parseJingmai(String serverId, String itemId){
         RestTemplate restTemplate=new RestTemplate(); //创建请求
 
         Map<String,String> params=new HashMap<>(); //创建参数表
         params.put("serverId",serverId);
-        params.put("roleUid",roleUid);
+        params.put("itemId",itemId);
         params.put("type","JingMaiContainer");
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
@@ -424,8 +423,8 @@ public class RequestRolesService {
         HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
 
         ResponseEntity<String> responseEntity=restTemplate.exchange(woniuJishiUrl
-                        + "roleMsg.do?"
-                        + "serverId={serverId}&roleUid={roleUid}&type={type}&_={_}",
+                        + "roleMsgInfo.do?"
+                        + "serverId={serverId}&itemId={itemId}&type={type}&_={_}",
                 HttpMethod.GET,requestEntity,String.class,params);
         String content = responseEntity.getBody();
 
@@ -462,12 +461,12 @@ public class RequestRolesService {
         return jingmais;
     }
 
-    public List<String> parseBaoWuBox(String serverId, String roleUid){
+    public List<String> parseBaoWuBox(String serverId, String itemId){
         RestTemplate restTemplate=new RestTemplate(); //创建请求
 
         Map<String,String> params=new HashMap<>(); //创建参数表
         params.put("serverId",serverId);
-        params.put("roleUid",roleUid);
+        params.put("itemId",itemId);
         params.put("type","BaoWuBox");
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
@@ -477,8 +476,8 @@ public class RequestRolesService {
         HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
 
         ResponseEntity<String> responseEntity=restTemplate.exchange(woniuJishiUrl
-                        + "roleMsg.do?"
-                        + "serverId={serverId}&roleUid={roleUid}&type={type}&_={_}",
+                        + "roleMsgInfo.do?"
+                        + "serverId={serverId}&itemId={itemId}&type={type}&_={_}",
                 HttpMethod.GET,requestEntity,String.class,params);
         String content = responseEntity.getBody();
 
@@ -499,7 +498,7 @@ public class RequestRolesService {
         return baoWuBox;
     }
 
-    public Map<String, ArrayList> parseEquip(String serverId, String roleUid){
+    public Map<String, ArrayList> parseEquip(String serverId, String itemId){
         ArrayList wawa = new ArrayList<>();
         ArrayList wawaOfBackpack = new ArrayList<>();
 
@@ -512,7 +511,7 @@ public class RequestRolesService {
 
         Map<String,String> params=new HashMap<>(); //创建参数表
         params.put("serverId",serverId);
-        params.put("roleUid",roleUid);
+        params.put("itemId",itemId);
         params.put("type","EquipBox");
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
@@ -522,8 +521,8 @@ public class RequestRolesService {
         HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
 
         ResponseEntity<String> responseEntity=restTemplate.exchange(woniuJishiUrl
-                        + "roleMsg.do?"
-                        + "serverId={serverId}&roleUid={roleUid}&type={type}&_={_}",
+                        + "roleMsgInfo.do?"
+                        + "serverId={serverId}&itemId={itemId}&type={type}&_={_}",
                 HttpMethod.GET,requestEntity,String.class,params);
         String content = responseEntity.getBody();
 
@@ -580,7 +579,7 @@ public class RequestRolesService {
 
         Map<String,String> params2 = new HashMap<>(); //创建参数表
         params2.put("serverId",serverId);
-        params2.put("roleUid",roleUid);
+        params2.put("itemId",itemId);
         params2.put("type","EquipToolBox");
         long timestamp2 = new Date().getTime(); //13位的时间戳
         params2.put("_",Long.toString(timestamp2));
@@ -590,8 +589,8 @@ public class RequestRolesService {
         HttpEntity<String> requestEntity2 = new HttpEntity<>(null, headers2);//将header放入一个请求
 
         ResponseEntity<String> responseEntity2 = restTemplate2.exchange(woniuJishiUrl
-                        + "roleMsg.do?"
-                        + "serverId={serverId}&roleUid={roleUid}&type={type}&_={_}",
+                        + "roleMsgInfo.do?"
+                        + "serverId={serverId}&itemId={itemId}&type={type}&_={_}",
                 HttpMethod.GET,requestEntity2,String.class,params2);
         String content2 = responseEntity2.getBody();
 
@@ -654,12 +653,12 @@ public class RequestRolesService {
         return result;
     }
 
-    public List<String> parseMount(String serverId, String roleUid){
+    public List<String> parseMount(String serverId, String itemId){
         RestTemplate restTemplate=new RestTemplate(); //创建请求
 
         Map<String,String> params=new HashMap<>(); //创建参数表
         params.put("serverId",serverId);
-        params.put("roleUid",roleUid);
+        params.put("itemId",itemId);
         params.put("type","ToolBox");
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_",Long.toString(timestamp));
@@ -669,8 +668,8 @@ public class RequestRolesService {
         HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
 
         ResponseEntity<String> responseEntity=restTemplate.exchange(woniuJishiUrl
-                        + "roleMsg.do?"
-                        + "serverId={serverId}&roleUid={roleUid}&type={type}&_={_}",
+                        + "roleMsgInfo.do?"
+                        + "serverId={serverId}&itemId={itemId}&type={type}&_={_}",
                 HttpMethod.GET,requestEntity,String.class,params);
         String content = responseEntity.getBody();
 
@@ -695,12 +694,12 @@ public class RequestRolesService {
         return mounts;
     }
 
-    public List<UseCardRec> parseUseCardRec(String serverId, String roleUid) {
+    public List<UseCardRec> parseUseCardRec(String serverId, String itemId) {
         RestTemplate restTemplate = new RestTemplate(); //创建请求
 
         Map<String, String> params = new HashMap<>(); //创建参数表
         params.put("serverId", serverId);
-        params.put("roleUid", roleUid);
+        params.put("itemId", itemId);
         params.put("type", "UseCardRec");
         long timestamp = new Date().getTime(); //13位的时间戳
         params.put("_", Long.toString(timestamp));
@@ -710,8 +709,8 @@ public class RequestRolesService {
         HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
 
         ResponseEntity<String> responseEntity = restTemplate.exchange(woniuJishiUrl
-                        + "roleMsg.do?"
-                        + "serverId={serverId}&roleUid={roleUid}&type={type}&_={_}",
+                        + "roleMsgInfo.do?"
+                        + "serverId={serverId}&itemId={itemId}&type={type}&_={_}",
                 HttpMethod.GET, requestEntity, String.class, params);
         String content = responseEntity.getBody();
 

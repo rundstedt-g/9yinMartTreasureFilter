@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Role {
     String id;
-    String roleUid;
     String name;
     String gender;
     String grade;

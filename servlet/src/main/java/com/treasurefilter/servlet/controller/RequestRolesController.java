@@ -29,8 +29,8 @@ public class RequestRolesController {
     @GetMapping(value="/getRoleContent")
     @ResponseStatus(HttpStatus.OK)
     public RoleContent getRoleContent(@RequestParam(value = "serverId") String serverId,
-                                      @RequestParam(value = "roleUid") String roleUid ){
-         return service.getRoleContent(serverId,roleUid);
+                                      @RequestParam(value = "itemId") String itemId ){
+         return service.getRoleContent(serverId,itemId);
     }
 
     @GetMapping(value="/serverList")
