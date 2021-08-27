@@ -97,7 +97,7 @@ public class GetRoles {
             }
 
             // 组合sql语句
-            sql = "SELECT tmp.roleID,role.name,role.gender,role.school,role.neigongyanxiu,role.price,role.status,role.server " +
+            sql = "SELECT tmp.roleID,role.grade,role.serverId,role.name,role.gender,role.school,role.neigongyanxiu,role.price,role.status,role.server " +
                     "FROM (SELECT treasure.`roleID` " +
                      clause1 + skillSql + is750sql + paramSql +
                      clause2 + paramCountSql + ") AS tmp ,role " +
@@ -168,7 +168,7 @@ public class GetRoles {
                 serversql = "";
             }
 
-            sql = "SELECT role.roleID,role.name,role.gender,role.school,role.neigongyanxiu,role.price,role.status,role.server " +
+            sql = "SELECT role.roleID,role.grade,role.serverId,role.name,role.gender,role.school,role.neigongyanxiu,role.price,role.status,role.server " +
                     "FROM role,threeskills " +
                     "WHERE role.`roleID`=threeskills.`roleID` AND " +
                     clause + serversql +
@@ -235,7 +235,7 @@ public class GetRoles {
                 serversql = "";
             }
 
-            sql = "SELECT role.roleID,role.name,role.gender,role.school,role.neigongyanxiu,role.price,role.status,role.server " +
+            sql = "SELECT role.roleID,role.grade,role.serverId,role.name,role.gender,role.school,role.neigongyanxiu,role.price,role.status,role.server " +
                     "FROM role,skin " +
                     "WHERE role.`roleID`=skin.`roleID` AND " +
                     clause + serversql +
@@ -245,23 +245,6 @@ public class GetRoles {
         }
         System.out.println(sql);
         List response = jdbcTemplate.queryForList(sql);
-
-        return response;
-    }
-
-    @RequestMapping(value="/getRole", method= RequestMethod.GET)
-    public Map searchBySkin(@RequestParam(value = "id") String id)throws IOException {
-        String treasureSql = "SELECT * FROM treasure WHERE treasure.roleID=" + id;
-        List treasure = jdbcTemplate.queryForList(treasureSql);
-        String threeSkillsSql = "SELECT * FROM threeskills WHERE threeskills.roleID=" + id;
-        List threeSkills = jdbcTemplate.queryForList(threeSkillsSql);
-        String skinSql = "SELECT * FROM skin WHERE skin.roleID=" + id;
-        List skin = jdbcTemplate.queryForList(skinSql);
-
-        Map response = new HashMap();
-        response.put("treasure",treasure);
-        response.put("threeSkills",threeSkills);
-        response.put("skin",skin);
 
         return response;
     }
@@ -295,34 +278,6 @@ public class GetRoles {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return response;
-    }
-
-    @GetMapping(value="/byName")
-    @ResponseStatus(HttpStatus.OK)
-    public List findByName(@RequestParam(value = "name",required = false,defaultValue = "") String name,
-                           @RequestParam(value = "server",required = false,defaultValue = "") String server){
-        String clause = "";
-        if(!name.equals("") || !server.equals("")){
-            clause += "WHERE ";
-        }
-
-        if(!name.equals("")){
-            clause += "role.`name` LIKE '%"+ name +"%' ";
-        }
-
-        if(!server.equals("")){
-            String andChar = "";
-            if(!name.equals("")){
-                andChar += "AND ";
-            }
-            clause += andChar + "role.server = '" + server + "' ";
-        }
-
-        String sql = "SELECT * FROM role " + clause + "ORDER BY role.price";
-
-        System.out.println(sql);
-        List response = jdbcTemplate.queryForList(sql);
         return response;
     }
 
