@@ -26,6 +26,13 @@ public class RequestRolesController {
         return service.findRolesByName(name,serverId);
     }
 
+    @GetMapping(value="/requestById")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Role> findRolesById(@RequestParam(value = "id") String id,
+                                      @RequestParam(value = "serverId") String serverId){
+        return service.findRolesById(id, serverId);
+    }
+
     @GetMapping(value="/getRoleContent")
     @ResponseStatus(HttpStatus.OK)
     public RoleContent getRoleContent(@RequestParam(value = "serverId") String serverId,

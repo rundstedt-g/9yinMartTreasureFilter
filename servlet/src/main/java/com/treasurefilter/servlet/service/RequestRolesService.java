@@ -79,6 +79,62 @@ public class RequestRolesService {
         return all;
     }
 
+    public List<Role> findRolesById(String id, String serverId){
+        RestTemplate restTemplate=new RestTemplate(); //创建请求
+
+        Map<String,String> params=new HashMap<>(); //创建参数表
+        params.put("serverId",serverId);
+        params.put("gameId","10");
+        params.put("itemId",id);
+        long timestamp = new Date().getTime(); //13位的时间戳
+        params.put("_",Long.toString(timestamp));
+
+        genHttpHeaders requestHeaders = new genHttpHeaders();
+        HttpHeaders headers = requestHeaders.gen("anonymousPage"); //生成请求头
+        HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);//将header放入一个请求
+
+        ResponseEntity<String> responseEntity=restTemplate.exchange(woniuJishiUrl
+                        + "anonymous/getTradeItem.do?"
+                        + "serverId={serverId}&gameId={gameId}&itemId={itemId}&_={_}",
+                HttpMethod.GET,requestEntity,String.class,params);
+        String content = responseEntity.getBody();
+
+        JSONArray jsonArray= JSONArray.parseArray(content);
+
+        JSONObject object = (JSONObject) jsonArray.get(0);
+
+        JSONObject pageData = (JSONObject) object.get("pageData");
+
+        ArrayList<Role> roles = new ArrayList<>();
+        Role role = new Role();
+
+        role.setId(pageData.get("id").toString());
+        role.setName(pageData.get("itemName").toString());
+        role.setGrade(pageData.getString("grade").toString().length()<4?pageData.getString("gradeName").toString():pageData.getString("grade").toString());
+        role.setGender(pageData.get("gender").toString());
+        role.setPrice(pageData.get("price").toString());
+        role.setNeigongyanxiu(parseNeigongyanxiu(serverId,role.getId()));
+        role.setSchool(parseSchool(serverId,role.getId()));
+        role.setServer(getServerName(serverId));
+
+        String remarnTime = object.getString("remarnTime");
+        if(remarnTime.length() == 0){
+            role.setStatus(pageData.getString("status"));
+        }
+        else if(remarnTime.indexOf("可售剩余") > -1){
+            role.setStatus("在售");
+        }
+        else if(remarnTime.indexOf("公示剩余") > -1){
+            role.setStatus("公示期");
+        }
+        else {
+            role.setStatus(pageData.getString("status"));
+        }
+
+        roles.add(role);
+        return roles;
+    }
+
     public RoleContent getRoleContent(String serverId, String itemId){
         List<String> baowu = parseBaoWuBox(serverId,itemId);
 
