@@ -268,6 +268,9 @@ public class GetRoles {
 
             if(nowTime.isAfter(parseTime) && endSignal.equals("finished")){
                 response.put("time",endTime);
+                response.put("affiche",
+                        "2021-09-09 : 新增根据风物志修竹伯玉、冰晶莲华、如云之乘的搜索。\n" +
+                        "2021-09-09 : 新增留言功能");
                 response.put("isMaintenance",false);
             }
             else {

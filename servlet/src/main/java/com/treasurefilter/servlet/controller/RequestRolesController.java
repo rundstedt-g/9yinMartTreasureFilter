@@ -1,23 +1,24 @@
 package com.treasurefilter.servlet.controller;
 
+import com.treasurefilter.servlet.entity.Message;
 import com.treasurefilter.servlet.entity.Role;
 import com.treasurefilter.servlet.entity.RoleContent;
-import com.treasurefilter.servlet.entity.UseCardRec;
 import com.treasurefilter.servlet.resultEntity.ServerResult;
+import com.treasurefilter.servlet.service.MessageService;
 import com.treasurefilter.servlet.service.RequestRolesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @CrossOrigin(origins =  {"http://localhost:8000", "http://localhost:8001","http://localhost:8002", "http://47.116.134.96:3002", "http://roles.rundstedt.cn"})
 public class RequestRolesController {
     @Autowired
     private RequestRolesService service;
+    @Autowired
+    private MessageService messageService;
 
     @GetMapping(value="/requestByName")
     @ResponseStatus(HttpStatus.OK)
@@ -44,5 +45,17 @@ public class RequestRolesController {
     @ResponseStatus(HttpStatus.OK)
     public List<ServerResult> findServerList(){
         return service.findServerList();
+    }
+
+    @GetMapping(value="/message")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Message> findMessageList(){
+        return messageService.findAll();
+    }
+
+    @PostMapping(value="/message")
+    @ResponseStatus(HttpStatus.OK)
+    public Message addMessage(@RequestParam("content") String content){
+        return messageService.addMessage(content);
     }
 }
