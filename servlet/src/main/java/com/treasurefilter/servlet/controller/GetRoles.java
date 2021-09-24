@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -269,6 +270,7 @@ public class GetRoles {
             if(nowTime.isAfter(parseTime) && endSignal.equals("finished")){
                 response.put("time",endTime);
                 response.put("affiche",
+                        getCurrentDate() + " : 因服务器到期，网站即将关闭。距网站关闭还有" + String.valueOf(30-Integer.valueOf(getCurrentDate().substring(8))-1) + "天。\n" +
                         "2021-09-09 : 新增根据风物志修竹伯玉、冰晶莲华、如云之乘的搜索。\n" +
                         "2021-09-09 : 新增留言功能");
                 response.put("isMaintenance",false);
@@ -290,5 +292,11 @@ public class GetRoles {
         String sql = "SELECT (@sn :=@sn + 1) sn, a.server FROM (SELECT DISTINCT role.`server` FROM role) a,(SELECT @sn :=0) b";
         List response = jdbcTemplate.queryForList(sql);
         return response;
+    }
+
+    public String getCurrentDate(){
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return date.format(formatter);
     }
 }
