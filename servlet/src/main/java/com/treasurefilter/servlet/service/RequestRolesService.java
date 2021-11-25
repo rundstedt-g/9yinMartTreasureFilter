@@ -27,7 +27,7 @@ import static com.treasurefilter.servlet.entity.Wuxue.is99Wuxue;
 @Service
 public class RequestRolesService {
     private String woniuJishiUrl = "http://jishi.woniu.com/9yin/";
-    private  List<ServerResult> serverList = findServerList();
+    private List<ServerResult> serverList = findServerList();
 
     public List<ServerResult> findServerList(){
         RestTemplate restTemplate=new RestTemplate(); //创建请求
