@@ -68,7 +68,7 @@ function lodeTreasure() {
     //记录本次所选的区服
     setCookie('area', selectedServer['areaId'], 30);
     setCookie('server', selectedServer['serverId'], 30);
-    location.replace("../html/main.html");
+    location.replace("../index.html");
 }
 
 function setCookie(cname, cvalue, exdays) {

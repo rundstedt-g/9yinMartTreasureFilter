@@ -45,7 +45,7 @@ $(document).ready(function(){
 
     }
     else{//无cookie,跳转到选择区服页面
-        location.replace("../html/toServerList.html");
+        location.replace("../toServerList.html");
     }
 
     //绑定下拉框的二级联动
@@ -403,7 +403,7 @@ function getTreasure(){
             var noGoods = $('<p>',{
                 class:"no_goods textCenter"
             });
-            noGoods.html('<img class="min_img" src="../images/junzi.png"> 抱歉，没有相关物品!');
+            noGoods.html('<img class="min_img" src="../css/images/junzi.png"> 抱歉，没有相关物品!');
             noGoods.appendTo('.goods_item_con');
         }
     }
